@@ -11,7 +11,17 @@ and migration tool.</p>
 
 > <p>Install Prisma and save it as dev dependency with  <strong>--save-dev</strong> flag.</p>
 
+### For MySql Database
+
+- npx prisma init --datasource-provider mysql
+
+### For Sqlite Database
+
 - npx prisma init --datasource-provider sqlite
+
+### For Postgres Database
+
+- npx prisma init --datasource-provider postgresql
 
 > <p>Initialize Prisma in the project and setting the database to sqlite.
 > <strong>postgresql</strong> for <strong>Postgres</strong> and <strong>mysql</strong> for <strong>MYSQL</strong>.</p>
