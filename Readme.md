@@ -3,6 +3,7 @@
 - Npm , Node
 - Typescript
 - Next js
+- SQL
 - Prisma
 - Git
 - Drizzle
