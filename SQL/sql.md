@@ -94,8 +94,15 @@ SELECT price, price*0.9 FROM shoes;
 
 ``` sql
 SELECT price, price*0.9 AS "10% OFF" FROM shoes;
-
 ```
+
+![Alt text](<../Screenshots/sql alias snap.PNG>)
+
+
+
+
+
+
 
 # OPERATORS
 - ! Not operator
