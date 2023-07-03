@@ -26,7 +26,17 @@ VALUES
 ```sql
 SELECT * FROM shoes
 ```
+# Retrieve Data from Database Conditionally
 
+``` sql 
+SELECT * FROM shoes WHERE id > 12;
+```
+
+# Retrieve Data as Columns From Database
+
+``` sql 
+SELECT id, brand, price FROM shoes;
+```
 # Adding More Data
 
 ```sql
