@@ -9,30 +9,35 @@
 ## Create a Table
 
 ```sql
-CREATE TABLE shoes (
-  id INT PRIMARY KEY UNIQUE,
-  brand VARCHAR(255),
-  price INT,
-  warranty_date DATE
+CREATE TABLE "customers" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL,
+	"points"	INTEGER NOT NULL,
+	"birth_date"	TEXT NOT NULL,
+	"state"	TEXT NOT NULL,
+	PRIMARY KEY("id")
 );
 ```
 
-## Insert into Table
+## Insert Data into the Table
 
 ```sql
-INSERT INTO shoes (brand, price)
+INSERT INTO customers
+(name,points,birth_date,state)
 VALUES
-  ('Nike', 100),
-  ('Adidas', 80),
-  ('Puma', 60),
-  ('Reebok', 70),
-  ('New Balance', 90);
+("Zulqarnain",870,'1999-09-13','FSD'),
+("Abbas",790,'1994-06-18','LHR'),
+("Nawaz",840,'1998-02-27','ISL'),
+("Riaz",1180,'1990-10-12','KAR'),
+("Babar",1480,'1993-08-14','MUL');
 ```
+
+- id is not added because it is by default a unique constraint so it will be taken care by the database server itself.
 
 ## Retrieve data from database
 
 ```sql
-SELECT * FROM shoes
+SELECT * FROM customers
 ```
 
 ## Comments in SQL
@@ -50,59 +55,51 @@ SELECT * FROM shoes
 ## Retrieve Data from Database Conditionally
 
 ```sql
-SELECT * FROM shoes WHERE id > 12;
+SELECT * FROM customers WHERE id > 12;
 ```
 
 ## Retrieve Data as Columns From Database
 
 ```sql
-SELECT id, brand, price FROM shoes;
-```
-
-## Adding More Data
-
-```sql
-INSERT INTO shoes (brand, price)
-VALUES
-  ('Vans', 65),
-  ('Converse', 50),
-  ('Under Armour', 120),
-  ('Skechers', 75),
-  ('ASICS', 95);
-
+SELECT id, name, points FROM customers;
 ```
 
 ## Updating the data
 
 ```sql
-UPDATE shoes
-SET price = 110
-WHERE id = 1;
+UPDATE customers
+SET state = 'HYD'
+WHERE id=1;
 
-UPDATE shoes
-SET brand = 'Reebok'
-WHERE id = 4;
+
+UPDATE customers
+SET state = 'KAR'
+WHERE id=2;
+
+UPDATE customers
+SET state = 'PES'
+WHERE id=3;
 
 ```
 
 ## Deleting data
 
 ```sql
-DELETE FROM shoes
-WHERE id = 7;
+DELETE FROM customers
+WHERE id = 4;
 
 ```
 
 ## Expressions upon column values
 
 ```sql
-SELECT price, price*0.9 FROM shoes;
+SELECT points, points + 30 FROM customers WHERE points <500;
 ```
 
 ## Expression as a Column Name (AS alias)
 
 ```sql
-SELECT price, price*0.9 AS "10% OFF" FROM shoes;
+SELECT points, points + 30 AS "30 points Bonus" FROM customers WHERE points < 500;
 ```
 
 ![Alt text](<../Screenshots/sql alias snap.PNG>)
@@ -116,9 +113,9 @@ SELECT price, price*0.9 AS "10% OFF" FROM shoes;
 ## Operators Expression
 
 ```sql
-SELECT * FROM shoes WHERE price <> 100;
+SELECT * FROM customers WHERE points <> 500;
 -- In this Case we are extracting values upon which
--- price is not equal to 100.
+-- price is not equal to 500.
 ```
 
 ## Unique Data (DISTINCT alias)
@@ -130,3 +127,47 @@ SELECT DISTINCT state FROM customers
 ```
 
 > In this case we will get the unique state. No Duplication in the results.
+
+## AND, OR , NOT operator
+
+- We combine multiple conditions using these Operators.
+
+```sql
+SELECT * FROM customers WHERE points > 500 AND birth_date < '2000-01-01' ;
+```
+
+```sql
+SELECT * FROM customers WHERE points > 500 OR
+birth_date < '2000-01-01' ;
+```
+
+```sql
+SELECT * FROM customers WHERE NOT points > 500 AND  birth_date < '2000-01-01' ;
+```
+
+## BETWEEN Operator
+
+```sql
+SELECT * FROM customers WHERE points
+BETWEEN 500 AND 1000;
+```
+
+> The BETWEEN Operator ranges the values. In this case it is filtering values that are in between 500 and 1000.This Expression is exactly equivalent to this Complex Expression.
+
+```sql
+SELECT * FROM customers WHERE points >=500 AND points<=1000;
+```
+
+## IN Operator
+
+```sql
+SELECT * FROM customers WHERE state IN ('KAR','LHR');
+```
+
+- This will list the results in which state is equal to
+  KAR or LHR. This Expression is exactly equal to this one.
+
+  ```sql
+  SELECT * FROM customers WHERE
+  state = 'KAR' OR state = 'LHR';
+  ```
