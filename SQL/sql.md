@@ -1,12 +1,12 @@
 # <b>SQL</b>
 
-><p> SQL stands for <b>Structured Query Language.</b> 
+> <p> SQL stands for <b>Structured Query Language.</b> 
 > It is a very powerful relational database query language. It is not a Case Sensitive Language.
-> In Relational database data is stored in the form of tables, </br> where
+> In Relational database data is stored in the form of tables, where
 > each row is called a <b>record</b> and a column is called a <b>Field.</b>
 >  </p>
 
-# Create a Table
+## Create a Table
 
 ```sql
 CREATE TABLE shoes (
@@ -17,7 +17,7 @@ CREATE TABLE shoes (
 );
 ```
 
-# Insert into Table
+## Insert into Table
 
 ```sql
 INSERT INTO shoes (brand, price)
@@ -29,32 +29,37 @@ VALUES
   ('New Balance', 90);
 ```
 
-# Retreive data from database
+## Retrieve data from database
 
 ```sql
 SELECT * FROM shoes
 ```
-# Comments in SQL
+
+## Comments in SQL
+
 > <p> 
-> We use the double hyphen (--) to create a single line commnet in sql. 
+> We use the double hyphen (--) to create a single line comment in sql.
+
 </p>
 
-``` sql
+```sql
 -- This is a comment is SQL.
 
 ```
-# Retrieve Data from Database Conditionally
 
-``` sql 
+## Retrieve Data from Database Conditionally
+
+```sql
 SELECT * FROM shoes WHERE id > 12;
 ```
 
-# Retrieve Data as Columns From Database
+## Retrieve Data as Columns From Database
 
-``` sql 
+```sql
 SELECT id, brand, price FROM shoes;
 ```
-# Adding More Data
+
+## Adding More Data
 
 ```sql
 INSERT INTO shoes (brand, price)
@@ -67,7 +72,7 @@ VALUES
 
 ```
 
-# Updating the data
+## Updating the data
 
 ```sql
 UPDATE shoes
@@ -80,43 +85,48 @@ WHERE id = 4;
 
 ```
 
-# Deleting data
+## Deleting data
 
 ```sql
 DELETE FROM shoes
 WHERE id = 7;
 
 ```
-# Expressions upon column values
 
-``` sql
+## Expressions upon column values
+
+```sql
 SELECT price, price*0.9 FROM shoes;
 ```
 
-# Expression as a Column Name (AS alias)
+## Expression as a Column Name (AS alias)
 
-``` sql
+```sql
 SELECT price, price*0.9 AS "10% OFF" FROM shoes;
 ```
 
 ![Alt text](<../Screenshots/sql alias snap.PNG>)
 
+## OPERATORS
 
-
-
-
-
-
-# OPERATORS
 - ! Not operator
 - != Not Equal Operator
-- <> Not Equal Operator 
-  
-# Operators Expression
+- <> Not Equal Operator
 
-``` sql 
+## Operators Expression
+
+```sql
 SELECT * FROM shoes WHERE price <> 100;
 -- In this Case we are extracting values upon which
 -- price is not equal to 100.
 ```
 
+## Unique Data (DISTINCT alias)
+
+- DISTINCT alias is used to filter unique results from the database.
+
+```sql
+SELECT DISTINCT state FROM customers
+```
+
+> In this case we will get the unique state. No Duplication in the results.
