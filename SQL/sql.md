@@ -1,7 +1,10 @@
 # <b>SQL</b>
 
 ><p> SQL stands for <b>Structured Query Language.</b> 
-> It is a very powerful relational database query language. It is not a Case Sensitive Language. </p>
+> It is a very powerful relational database query language. It is not a Case Sensitive Language.
+> In Relational database data is stored in the form of tables, </br> where
+> each row is called a <b>record</b> and a column is called a <b>Field.</b>
+>  </p>
 
 # Create a Table
 
@@ -116,3 +119,4 @@ SELECT * FROM shoes WHERE price <> 100;
 -- In this Case we are extracting values upon which
 -- price is not equal to 100.
 ```
+
