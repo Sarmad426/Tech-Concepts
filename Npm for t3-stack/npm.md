@@ -2,11 +2,11 @@
 
 ### Install React Icons Library
 
-- npm install react-icons
+> npm install react-icons
 
-### Add icons
+# Add icons
 
-#### Search Icon
+## Search Icon
 
 ```tsx
 import { Bisearch } from "react-icons/bi";
@@ -14,10 +14,17 @@ import { Bisearch } from "react-icons/bi";
 <Bisearch />;
 ```
 
-#### Navbar Menu
+## Navbar Menu
 
 ```tsx
 import { AiOutlineMenu } from "react-icons/ai";
 
 <AiOutlineMenu />;
+```
+## Close Button
+
+``` tsx
+import { IoMdClose } from 'react-icons/io';
+
+<IoMdClose/>
 ```
