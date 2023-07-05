@@ -102,7 +102,7 @@ SELECT points, points + 30 FROM customers WHERE points <500;
 SELECT points, points + 30 AS "30 points Bonus" FROM customers WHERE points < 500;
 ```
 
-![Alt text](<../Screenshots/sql alias snap.PNG>)
+![SQL AS alias snapshot.](<../Screenshots/sql alias snap.PNG>)
 
 ## OPERATORS
 
