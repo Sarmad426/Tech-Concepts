@@ -60,7 +60,7 @@ Block Quote is written by starting the line with a (>) sign.
 > Alternatively you can use the semantic html ul, li to create an unordered list.
 >> ### Syntax
  
-``` md
+``` html
 <ul>
 <li>This is an Unordered List.</li>
 <li>This is also an unordered list.</li>
@@ -89,7 +89,7 @@ Block Quote is written by starting the line with a (>) sign.
 > Alternatively you can use the semantic html ol, li to create an ordered list.
 >> ### Syntax
 
-``` md
+``` html
 <ol>
 <li>This is an ordered List.</li>
 <li>This is also ordered list.</li>
@@ -197,7 +197,7 @@ Block Quote is written by starting the line with a (>) sign.
 
 > Mark the upper power with sup tag.
 > Mark the lower power with the sub tag.
-
+>> ### Syntax
 ```md
 - H<sup>2</sup>O.
 - H<sub>2</sub>O.
@@ -221,7 +221,7 @@ Block Quote is written by starting the line with a (>) sign.
 
 ![Image Not Found](<Image Path.png>)
 
-> This syntax starts with a ! symbol. Inside the braces we provide the text which will be displayed when image is not found or any sort of error.In this case it is jest **alt text**. Next to that in parenthesis we put the path of the image.
+> This syntax starts with a ! symbol. Inside the braces we provide the text which will be displayed when image is not found or any sort of error. In this case it is jest **alt text**. Next to that in parenthesis we put the path of the image.
 
 >> ### Syntax
 
