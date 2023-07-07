@@ -167,7 +167,72 @@ SELECT * FROM customers WHERE state IN ('KAR','LHR');
 - This will list the results in which state is equal to
   KAR or LHR. This Expression is exactly equal to this one.
 
-  ```sql
-  SELECT * FROM customers WHERE
-  state = 'KAR' OR state = 'LHR';
-  ```
+```sql
+SELECT * FROM customers WHERE
+state = 'KAR' OR state = 'LHR';
+```
+
+## Like Operator
+
+Like operator is used for searching string patterns.
+
+>Get customers whose name starts with b. (Capital or Small)
+***
+``` sql
+SELECT * FROM customers
+WHERE name LIKE 'b%';
+```
+
+> Get customers whose name ends with b.
+
+ ***
+
+```SQL
+SELECT * FROM customers 
+WHERE name LIKE '%b';
+```
+> Search a name that has bas anywhere in the name.
+
+***
+
+```sql
+SELECT * FROM customers 
+WHERE name LIKE '%bas%';
+```
+
+## REGEXP Operator (Regular Expression)
+
+> Search a name that has bas anywhere in the name.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP 'bas';
+```
+
+> Search those whose name starts with zul.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP '^zul';
+```
+
+> Search those whose name ends with zul.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP 'zul$';
+```
+
+> Search customers whose name either contain mark or simon.
+***
+``` SQL
+SELECT * FROM customers
+WHERE name REGEXP 'mark|simon' 
+```
+> Now form mark, simon and rose
+
+***
+``` SQL
+SELECT * FROM customers
+WHERE name REGEXP 'mark|simon|rose' 
+```
