@@ -171,3 +171,39 @@ SELECT * FROM customers WHERE state IN ('KAR','LHR');
   SELECT * FROM customers WHERE
   state = 'KAR' OR state = 'LHR';
   ```
+
+## IS NULL Operator
+
+```SQL
+SELECT * FROM 
+customers WHERE state IS NULL; 
+```
+
+This will output the values where state is null. Null means the absence of a value.
+
+- We can also use the `NOT` operator to negate this condition. 
+  
+```SQL
+SELECT * FROM customers 
+WHERE state IS NOT NULL;
+```
+This will result the customers where state is not null.
+
+## ORDER BY Operator
+
+This operator is used to sort data in the output results. By default data is sorted by the id because id is the primary key.
+
+```sql
+SELECT * FROM customers 
+ORDER BY name
+```
+This will give data sorted by the name.
+
+## DESC Operator (Descending)
+
+Let's sort data in descending order.
+
+```SQL
+SELECT * FROM customers 
+ORDER BY name DESC
+```
