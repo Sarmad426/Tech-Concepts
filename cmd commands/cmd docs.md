@@ -120,7 +120,7 @@ HELP >> "cmd help.txt"
 
 # Windows 11 Specific
 
-## See tee wifi ever connected to the OS
+## See the wifi ever connected to the OS
 
 ```
 netsh wlan show profile
