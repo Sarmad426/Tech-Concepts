@@ -167,10 +167,75 @@ SELECT * FROM customers WHERE state IN ('KAR','LHR');
 - This will list the results in which state is equal to
   KAR or LHR. This Expression is exactly equal to this one.
 
-  ```sql
-  SELECT * FROM customers WHERE
-  state = 'KAR' OR state = 'LHR';
-  ```
+```sql
+SELECT * FROM customers WHERE
+state = 'KAR' OR state = 'LHR';
+```
+
+## Like Operator
+
+Like operator is used for searching string patterns.
+
+>Get customers whose name starts with b. (Capital or Small)
+***
+``` sql
+SELECT * FROM customers
+WHERE name LIKE 'b%';
+```
+
+> Get customers whose name ends with b.
+
+ ***
+
+```SQL
+SELECT * FROM customers 
+WHERE name LIKE '%b';
+```
+> Search a name that has bas anywhere in the name.
+
+***
+
+```sql
+SELECT * FROM customers 
+WHERE name LIKE '%bas%';
+```
+
+## REGEXP Operator (Regular Expression)
+
+> Search a name that has bas anywhere in the name.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP 'bas';
+```
+
+> Search those whose name starts with zul.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP '^zul';
+```
+
+> Search those whose name ends with zul.
+***
+``` sql
+SELECT * FROM customers 
+WHERE name REGEXP 'zul$';
+```
+
+> Search customers whose name either contain mark or simon.
+***
+``` SQL
+SELECT * FROM customers
+WHERE name REGEXP 'mark|simon' 
+```
+> Now form mark, simon and rose
+
+***
+``` SQL
+SELECT * FROM customers
+WHERE name REGEXP 'mark|simon|rose' 
+```
 
 ## IS NULL Operator
 
@@ -181,12 +246,13 @@ customers WHERE state IS NULL;
 
 This will output the values where state is null. Null means the absence of a value.
 
-- We can also use the `NOT` operator to negate this condition. 
+- We can also use the `NOT` operator to negate this condition.
   
 ```SQL
 SELECT * FROM customers 
 WHERE state IS NOT NULL;
 ```
+
 This will result the customers where state is not null.
 
 ## ORDER BY Operator
@@ -197,6 +263,7 @@ This operator is used to sort data in the output results. By default data is sor
 SELECT * FROM customers 
 ORDER BY name
 ```
+
 This will give data sorted by the name.
 
 ## DESC Operator (Descending)
