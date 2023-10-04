@@ -2,19 +2,17 @@
 
 Create a auth project on <https://dashboard.clerk.com/>
 
-
-#### Install Clerk for Nextjs
+## Install Clerk for Nextjs
 
 ``` npm
 npm install @clerk/nextjs
 ```
 
-#### Then add the project keys to your `.env.local` file
+## Then add the project keys to your `.env.local` file
 
 in your root project. This file can also be `.env`.
 
-
-```
+```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=••••••••••••••••••••••••••••••••••
 CLERK_SECRET_KEY=sk_test_••••••••••••••••••••••••••••••••••
 
@@ -23,13 +21,12 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 ```
+
 **Note:**  This is just an example key. Put your own project keys from clerk.
 
-
-#### Then Wrap entire app in `<ClerkProvider></ClerkProvider>`
+### Then Wrap entire app in `<ClerkProvider></ClerkProvider>`
 
 **In your `app/layout.tsx` file**
-
 
 ``` tsx
 import './globals.css'
@@ -69,7 +66,6 @@ export const config = {
 };
 ```
 
-
 #### Create a sign-up route like this
 
 `app/sign-up/[[...sign-up]]/page.tsx`
@@ -81,7 +77,6 @@ export default function Page() {
   return <SignUp />;
 }
 ```
-
 
 #### Similarly Create a sign-in route like this
 
@@ -96,7 +91,6 @@ export default function Page() {
 ```
 
 #### Use `UserButton` from clerk in the `app/page.tsx`
-
 
 ```tsx
 import { UserButton } from "@clerk/nextjs";
