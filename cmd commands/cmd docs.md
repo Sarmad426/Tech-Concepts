@@ -237,7 +237,9 @@ Or it can also be used to check connection for a domain.
 
 **For Example:**
 
-- `ping https://github.com`
+- `ping www.github.com`
+
+This command returns 4 packets.
 
 - `netstat`
 netstat stands for **Network Statistics.**
