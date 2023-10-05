@@ -11,7 +11,11 @@ These are the hexadecimal colors
 ```cmd
 COLOR 70
 ```
+## Hexadecimal Code
 
+```cmd
+color A
+```
 or anything up to hexadecimal characters.
 
 ## Create a Folder
