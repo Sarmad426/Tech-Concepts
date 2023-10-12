@@ -47,4 +47,5 @@ ip dhcp pool name
 default-router 192.168.1.1
 network 192.168.1.1 255.255.255.0
 end
+wr
 ```
