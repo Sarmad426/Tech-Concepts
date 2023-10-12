@@ -33,3 +33,18 @@ Now press `wr` to save the configuration you made.
 `sh ip int br`
 
 It stands for **Show IP Interface Brief.**
+
+
+## Configure DHCP
+
+**DHCP** stands for Dynamic Host Configuration Protocol. It is a network management protocol used to dynamically assign an IP address to any device, or node, on a network so it can communicate using IP.
+
+
+```cisco
+en
+config t
+ip dhcp pool name
+default-router 192.168.1.1
+network 192.168.1.1 255.255.255.0
+end
+```
