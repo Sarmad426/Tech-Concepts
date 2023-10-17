@@ -49,3 +49,27 @@ network 192.168.1.1 255.255.255.0
 end
 wr
 ```
+
+## Configure VLAN in Cisco Switch
+
+VLAN Stands for **Virtual Local Area Network.** It is used when we don't want
+two networks in the same ip to communicate. For this example we will create two
+vlans in the same network.
+
+1. sales
+2. marketing
+
+```cisco
+config t
+hostname SW1
+
+vlan 10
+name sales
+
+vlan 20
+name marketing
+
+end
+
+sh valn br
+```
