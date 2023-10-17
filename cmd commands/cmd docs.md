@@ -11,11 +11,21 @@ These are the hexadecimal colors
 ```cmd
 COLOR 70
 ```
+
 ## Hexadecimal Code
 
 ```cmd
 color A
 ```
+
+## Check Battery Health
+
+```cmd
+powercfg/batteryreport
+```
+
+This will create an `html` file where **Command Prompt** is open. Open this file to see the battery health.
+
 or anything up to hexadecimal characters.
 
 ## Create a Folder
