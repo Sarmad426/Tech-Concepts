@@ -60,6 +60,7 @@ vlans in the same network.
 2. marketing
 
 ```cisco
+en
 config t
 hostname SW1
 
