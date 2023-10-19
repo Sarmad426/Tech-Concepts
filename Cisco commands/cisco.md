@@ -69,7 +69,17 @@ name sales
 vlan 20
 name marketing
 
+int range f0/1-4
+
+switchport access vlan 10
+
+int range f0/5-7
+
+switchport access vlan 20
+
 end
+
+wr
 
 sh valn br
 ```
