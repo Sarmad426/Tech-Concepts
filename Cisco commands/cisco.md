@@ -113,3 +113,29 @@ int f0/3
 switchport mode trunk
 
 ```
+
+
+## For Switch 2
+
+
+```cisco
+en
+config t
+hostname SW2
+vlan 10
+name sales
+vlan 20
+name marketing
+
+int f0/1
+switchport mode access
+switchport access vlan 10
+
+int f0/2
+switchport mode access
+switchport access vlan 20
+
+int f0/3
+switchport mode trunk
+
+```
