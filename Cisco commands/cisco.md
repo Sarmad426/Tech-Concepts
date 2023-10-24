@@ -84,3 +84,8 @@ wr
 
 sh valn br
 ```
+
+
+# Configure Vlan and Trunks
+
+Configuring virtual networks and trunks in cisco packet tracer. Consider we have two switches connected to 2 systems and these switches are also connected to each other within the same ip and default gateway, they can communicated. But to prevent that we use Vlans. But if we want to networks connected to different switches to communicate we can use trunks.
