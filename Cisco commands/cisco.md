@@ -145,7 +145,8 @@ switchport mode trunk
 The main purpose of inter-VLAN routing is to enable communication between different VLANs in a network. It improves network performance by reducing congestion and containing broadcast traffic within each VLAN. Inter-VLAN routing enhances security by implementing access control lists and firewall rules to restrict unauthorized access. It provides flexibility and scalability, allowing for easy network expansion and resource sharing. Efficient resource utilization is achieved by sharing servers or printers across multiple VLANs. Inter-VLAN routing simplifies network management by logically grouping users or departments based on requirements. Overall, it offers increased network flexibility, security, and performance.
 
 ### Switch Configuration
-```
+
+```cisco
 en
 config t
 
@@ -182,7 +183,7 @@ sh vlan br
 
 ### Router Configuration
 
-```
+```cisco
 en
 config t
 hostname R1
@@ -198,4 +199,15 @@ no sh
 end
 wr
 sh ip int br
+```
+
+```cisco
+
+int g0/0/0
+switchport access vlan 10
+switchport mode access
+
+int g0/0/1
+switchport access vlan 10
+switchport mode access
 ```
