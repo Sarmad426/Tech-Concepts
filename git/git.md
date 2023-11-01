@@ -97,3 +97,14 @@ Here are some best practices for effective team collaboration using Git:
 Remember to adapt these practices to your team's specific needs and workflow.
 
 Now you have a comprehensive guide to Git branching, collaboration, and best practices. Feel free to copy and paste this Markdown guide into your documentation.
+
+
+## To check the commit that is not yet pushed to origin
+
+To check the commit that is not yet pushed to the remote repository, you can use the following git command:
+
+```
+git log origin/main..HEAD
+```
+
+This command will show you the commits that are present in your local branch (main) but not in the remote branch (origin/main).
