@@ -211,3 +211,15 @@ int g0/0/1
 switchport access vlan 10
 switchport mode access
 ```
+
+### What is Intervlan. How it is different from trunk?
+
+In networking, inter-VLAN refers to the communication between different VLANs (Virtual Local Area Networks). VLANs are used to logically separate a network into smaller, isolated segments, and inter-VLAN routing allows these segments to communicate with each other.
+
+Inter-VLAN routing is used to enable communication between devices in different VLANs, which would otherwise be isolated from each other. It allows for better network security, improved performance, and more efficient use of network resources.
+
+On the other hand, a trunk is a network link that carries traffic for multiple VLANs. It is used to connect switches together and allows VLAN traffic to pass between them. Trunks use VLAN tagging to identify which VLAN a packet belongs to when it is transmitted between switches.
+
+The main difference between inter-VLAN and trunk is their purpose and scope. Inter-VLAN routing is concerned with facilitating communication between devices in different VLANs, while a trunk is responsible for carrying traffic for multiple VLANs between switches.
+
+In summary, inter-VLAN routing enables communication between devices in different VLANs, while a trunk is a network link that carries traffic for multiple VLANs between switches.
