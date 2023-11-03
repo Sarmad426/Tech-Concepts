@@ -179,3 +179,13 @@ Fixing unrelated histories in Git is a useful technique when you need to merge t
 ```git
 git log --pretty=oneline
 ```
+
+### Count the number of Commits locally
+
+To check the number of commits in a Git repository locally using a terminal, you can use the git rev-list command with the --count option. Here's how you can do it:
+
+```git
+git rev-list --count HEAD
+```
+
+This command will count the number of commits reachable from the current branch's HEAD.
