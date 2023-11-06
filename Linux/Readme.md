@@ -89,7 +89,6 @@ These commands and examples should help you perform common file and folder opera
 
 ## Linux Networking Commands
 
-
 1. **ping** - Test Network Connectivity
 
    The `ping` command is used to test network connectivity to a remote host by sending ICMP echo request packets.
