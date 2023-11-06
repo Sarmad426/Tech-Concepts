@@ -223,3 +223,27 @@ On the other hand, a trunk is a network link that carries traffic for multiple V
 The main difference between inter-VLAN and trunk is their purpose and scope. Inter-VLAN routing is concerned with facilitating communication between devices in different VLANs, while a trunk is responsible for carrying traffic for multiple VLANs between switches.
 
 In summary, inter-VLAN routing enables communication between devices in different VLANs, while a trunk is a network link that carries traffic for multiple VLANs between switches.
+
+## Router on the stick inter-vlan
+
+### Switch Configuration
+
+```cisco
+en
+config t
+hostname SW1
+valn 10
+name sales
+vlan 20
+name marketing
+int range f0/1-4
+switchport access vlan 10
+switchport mode access
+
+int range f0/5-8
+switchport access vlan 20
+switchport mode access
+
+int f0/9
+switchport mode trunk
+```
