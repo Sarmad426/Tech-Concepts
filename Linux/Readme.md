@@ -86,3 +86,128 @@ nano filename.txt
 After making your changes, press `Ctrl + O` to save the file and `Ctrl + X` to exit the editor.
 
 These commands and examples should help you perform common file and folder operations on the Linux command line. Please exercise caution, especially when deleting files or folders, to avoid accidental data loss.
+
+## Linux Networking Commands
+
+
+1. **ping** - Test Network Connectivity
+
+   The `ping` command is used to test network connectivity to a remote host by sending ICMP echo request packets.
+
+   Example:
+
+   ```bash
+   ping google.com
+   ```
+
+   Explanation: This command sends ICMP packets to google.com to check if it's reachable and measures the round-trip time.
+
+2. **ifconfig (or ip addr)** - Display Network Interface Information
+
+   The `ifconfig` (or `ip addr`) command displays information about network interfaces on your system.
+
+   Example:
+
+   ```bash
+   ifconfig
+   ```
+
+   Explanation: This command provides information about network interfaces, including IP addresses, MAC addresses, and more.
+
+3. **netstat** - Network Statistics
+
+   The `netstat` command displays network statistics and information about network connections, routing tables, and interface statistics.
+
+   Example:
+
+   ```bash
+   netstat -tuln
+   ```
+
+   Explanation: This command shows a list of all listening TCP and UDP ports on your system.
+
+4. **ss** - Socket Statistics
+
+   The `ss` command is an alternative to `netstat` and provides detailed socket statistics.
+
+   Example:
+
+   ```bash
+   ss -tuln
+   ```
+
+   Explanation: Similar to `netstat`, this command displays listening TCP and UDP ports, but it's more efficient.
+
+5. **ifup / ifdown** - Bring Network Interface Up or Down
+
+   The `ifup` and `ifdown` commands are used to bring a network interface up or down, respectively.
+
+   Example:
+
+   ```bash
+   sudo ifdown eth0
+   ```
+
+   Explanation: This command deactivates the network interface `eth0`.
+
+6. **ifconfig (or ip) up / down** - Bring Network Interface Up or Down
+
+   You can also use `ifconfig` or `ip` to bring a network interface up or down.
+
+   Example:
+
+   ```bash
+   ifconfig eth0 down
+   ```
+
+   Explanation: This command deactivates the network interface `eth0`.
+
+7. **traceroute** - Trace the Route to a Host
+
+   The `traceroute` command traces the route taken by packets to reach a destination host.
+
+   Example:
+
+   ```bash
+   traceroute google.com
+   ```
+
+   Explanation: This command shows the route taken by packets to reach google.com, displaying the IP addresses of intermediate hops.
+
+8. **nslookup (or dig)** - DNS Query
+
+   The `nslookup` or `dig` command is used to query DNS (Domain Name System) for information about hostnames and IP addresses.
+
+   Example:
+
+   ```bash
+   nslookup google.com
+   ```
+
+   Explanation: This command queries DNS to find the IP address associated with `google.com`.
+
+9. **route** - Display or Modify the Kernel Routing Table
+
+   The `route` command is used to display or modify the kernel routing table.
+
+   Example:
+
+   ```bash
+   route -n
+   ```
+
+   Explanation: This command displays the routing table with numeric IP addresses.
+
+10. **nmap** - Network Mapper
+
+    The `nmap` command is a powerful network scanning tool used to discover hosts and services on a network.
+
+    Example:
+
+    ```bash
+    nmap -p 80-100 192.168.1.1
+    ```
+
+    Explanation: This command scans ports 80 to 100 on the host with IP address 192.168.1.1.
+
+These networking commands are useful for managing and diagnosing network-related issues on a Linux system. Please note that some of these commands may require superuser privileges (sudo) to run.
