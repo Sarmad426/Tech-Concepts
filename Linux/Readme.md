@@ -210,3 +210,88 @@ These commands and examples should help you perform common file and folder opera
     Explanation: This command scans ports 80 to 100 on the host with IP address 192.168.1.1.
 
 These networking commands are useful for managing and diagnosing network-related issues on a Linux system. Please note that some of these commands may require superuser privileges (sudo) to run.
+
+## Wifi Network details using terminal
+
+1. **Check Available Wi-Fi Networks**:
+
+   To view a list of available Wi-Fi networks, you can use the `iwlist` or `nmcli` commands.
+
+   - Using `iwlist`:
+
+     ```bash
+     sudo iwlist <interface> scan
+     ```
+
+     Replace `<interface>` with the name of your Wi-Fi interface, typically something like `wlan0`. This command will scan for available Wi-Fi networks and display their details.
+
+   - Using `nmcli` (NetworkManager Command-Line Tool):
+
+     ```bash
+     nmcli device wifi list
+     ```
+
+     This command lists available Wi-Fi networks along with their details.
+
+2. **Check Your Current Wi-Fi Connection**:
+
+   To check the details of your current Wi-Fi connection, you can use the following commands:
+
+   - Using `iwconfig`:
+
+     ```bash
+     iwconfig
+     ```
+
+     This command will display information about your wireless interface, including the SSID, signal strength, and more.
+
+   - Using `nmcli`:
+
+     ```bash
+     nmcli connection show --active
+     ```
+
+     This command lists active network connections, including the current Wi-Fi connection.
+
+3. **Check Wi-Fi Interface Information**:
+
+   To get detailed information about your Wi-Fi interface, you can use the `iw` command.
+
+   ```bash
+   sudo iw dev <interface> info
+   ```
+
+   Replace `<interface>` with your Wi-Fi interface name (e.g., `wlan0`). This command provides information about the Wi-Fi interface itself, such as its capabilities and supported modes.
+
+4. **Check IP Address and Gateway**:
+
+   To check the IP address and default gateway for your Wi-Fi connection, you can use the `ip` command.
+
+   ```bash
+   ip addr show <interface>
+   ip route show
+   ```
+
+   Replace `<interface>` with your Wi-Fi interface name. The first command will display your IP address, and the second command will show your default gateway.
+
+5. **Check Wi-Fi Signal Strength**:
+
+   To check the signal strength of your Wi-Fi connection, you can use the `iw` or `nmcli` commands.
+
+   - Using `iw`:
+
+     ```bash
+     iw dev <interface> link
+     ```
+
+     This command displays the signal strength and quality of your Wi-Fi connection.
+
+   - Using `nmcli`:
+
+     ```bash
+     nmcli -f SIGNAL,BARS device wifi
+     ```
+
+     This command lists available Wi-Fi networks with signal strength and signal bars.
+
+By following these steps and using the provided commands, you can easily check Wi-Fi details using the terminal in Linux. Make sure to replace `<interface>` with the name of your actual Wi-Fi interface, which you can find using the `ifconfig` or `ip addr` commands.
