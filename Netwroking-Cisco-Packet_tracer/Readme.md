@@ -247,3 +247,21 @@ switchport mode access
 int f0/9
 switchport mode trunk
 ```
+
+### Router Configuration
+
+```cisco
+config t
+hostname R1
+int f0/0
+no sh
+
+int f0/0.10
+encapsulation dot1q 10
+ip add 192.168.10.1 255.255.255.0
+
+int f0/0.20
+encapsulation dot1q 20
+ip add 192.168.20.1 255.255.255.0
+```
+
