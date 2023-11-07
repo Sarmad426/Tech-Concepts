@@ -10,3 +10,8 @@ This is possible because Next.js extends the native fetch API to allow each requ
 caching semantics.
 
 ![image](https://github.com/Sarmad426/Documentation/assets/112152732/5014affc-1e44-472b-8913-25616a93f947)
+
+## Incremental Static Regeneration (ISR)? 
+
+Incremental Static Regeneration (ISR) is a feature in Next.js that allows you to update static pages without rebuilding 
+the entire site. This can help improve performance and reduce build times. Here’s an example of how to use ISR:
