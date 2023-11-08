@@ -7,21 +7,26 @@ and migration tool.</p>
 
 ## Setting Up Prisma For Next js Project
 
-- npm install prisma --save-dev
-
+```npm
+npm install prisma --save-dev
+```
 > <p>Install Prisma and save it as dev dependency with  <strong>--save-dev</strong> flag.</p>
 
 ### For MySql Database
 
-- npx prisma init --datasource-provider mysql
-
+```npm
+npx prisma init --datasource-provider mysql
+```
 ### For Sqlite Database
 
-- npx prisma init --datasource-provider sqlite
-
+```npm
+npx prisma init --datasource-provider sqlite
+```
 ### For Postgres Database
 
-- npx prisma init --datasource-provider postgresql
+```
+npx prisma init --datasource-provider postgresql
+```
 
 > <p>Initialize Prisma in the project and setting the database to sqlite.
 > <strong>postgresql</strong> for <strong>Postgres</strong> and <strong>mysql</strong> for <strong>MYSQL</strong>.</p>
@@ -55,13 +60,17 @@ model Todo {
 
 ## Running Migration
 
-- npx prisma migrate dev
+```npm
+npx prisma migrate dev
+```
 
 > <p>Migrating the model changes into the database.</p>
 
 > Or with Flag to provide the name
 
-- npx prisma migrate dev --name initialize the user and post model
+```pip
+npx prisma migrate dev --name initialize the user and post model
+```
 
 This command did two things:
 
@@ -70,15 +79,24 @@ This command did two things:
 
 Because the SQLite database file didn't exist before, the command also created it inside the prisma directory with the name dev.db as defined via the environment variable in the .env file.
 
-- npx prisma studio
+```npm
+npx prisma studio
+```
 
   > This command runs a local server at port 5555 [PORT Link](http://localhost:5555). <br>
   > Prisma Studio Allows you to Check the data in the database.See rows columns add or update data.
 
-- npm install @prisma/client
+```npm
+npm install @prisma/client
+```
+
   > <p>This command Installs prisma client.</p>
-- npx prisma generate
-  > <p>This Command Generates the prisma client.</p>
+
+```npm
+npx prisma generate
+```
+
+> <p>This Command Generates the prisma client.</p>
 
 ## Exploring How to send queries to database using prisma
 
