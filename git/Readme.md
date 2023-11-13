@@ -189,3 +189,18 @@ git rev-list --count HEAD
 ```
 
 This command will count the number of commits reachable from the current branch's HEAD.
+
+### Update Git to latest version using Command Line (For Windows)
+
+Check the version first.
+
+```git
+git version
+```
+
+Now Update it to latest stable version using terminal.
+
+```git
+git update-git-for-windows
+```
+
