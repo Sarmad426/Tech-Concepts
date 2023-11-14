@@ -161,3 +161,9 @@ export default async function Home() {
   );
 }
 ```
+
+## Reset a Database
+
+```npx
+npx prisma migrate reset
+```
