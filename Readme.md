@@ -15,6 +15,7 @@
 - Vercel
 - Stripe
 - Clerk
+- Zustand
 
 ## Checkout Some of my amazing projects
 
