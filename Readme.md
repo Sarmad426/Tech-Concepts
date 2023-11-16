@@ -49,6 +49,8 @@ Car Show case ui. Built With Next js, Typescript, Tailwind CSS.
 
 ### Todo List App
 
-Simple Todo List app. Built With Next js, Typescript, Tailwind CSS and neon (Serverless Postgresql).
+Simple Todo List app. Built With Next.js 14 (Server Actions), Typescript, Tailwind CSS and neon (Serverless Postgresql).
 
 <https://next-server-actions-todo-app-jade.vercel.app/>
+
+The purpose to build this basic application was to get started with `Next.js` Server actions.
