@@ -143,7 +143,7 @@ This will update the remote repository with the merged commit history.
 
 It's crucial to communicate with your team or collaborators when merging unrelated histories. Inform them about the changes and the fact that unrelated histories were merged, as this may impact their work or their understanding of the project's history.
 
-## Conclusion
+## Fixing Unrelated History
 
 Fixing unrelated histories in Git is a useful technique when you need to merge two repositories with different commit histories. However, it should be used with caution, as merging unrelated histories can lead to complications and potential conflicts. Ensure that you understand the implications and communicate with your team before proceeding.
 
