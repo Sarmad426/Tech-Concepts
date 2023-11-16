@@ -1,11 +1,12 @@
 # Git
 
-Git is an open source **Version Control System**(VCS) that's maps the changes in your project.It also contains the history and you can jump back to the specific changes you want. The project is called a git **Repository**
-[Install Git] <https://git-scm.com>
+Git is an open-source **Version Control System** (VCS) that maps the changes in your project. It also contains the history, allowing you to jump back to specific changes. The project is called a Git **Repository**.
+
+[Install Git](https://git-scm.com)
 
 ## Github
 
-Github is a cloud platform that host the copy of the repository online. The hosted repository at github or any platform is called **Remote Repository**.
+GitHub is a cloud platform that hosts a copy of the repository online. The hosted repository on GitHub or any platform is called a **Remote Repository**.
 
 Certainly! Here's a step-by-step guide to performing various Git operations, including creating branches, changing branch names, switching branches, merging branches, and deleting branches. Additionally, I'll provide some best practices for effective team collaboration using Git. This guide will use Markdown syntax with code blocks for easy copying and pasting.
 
@@ -15,7 +16,6 @@ Certainly! Here's a step-by-step guide to performing various Git operations, inc
 
 To create and switch to a new branch in Git:
 
-```markdown
 ```bash
 # Create a new branch
 git checkout -b new-branch-name
@@ -24,25 +24,19 @@ git checkout -b new-branch-name
 git checkout existing-branch-name
 ```
 
-```git
-
 #### **2. Changing Branch Names**
 
 To change the name of a branch:
 
-```markdown
 ```bash
 # Rename the current branch
 git branch -m new-branch-name
 ```
 
-```git
-
 #### **3. Merging Branches**
 
 To merge changes from one branch into another:
 
-```markdown
 ```bash
 # Switch to the target branch
 git checkout target-branch-name
@@ -51,13 +45,10 @@ git checkout target-branch-name
 git merge source-branch-name
 ```
 
-```git
-
 #### **4. Deleting Branches**
 
 To delete a branch (Note: Ensure you are not on the branch you intend to delete):
 
-```markdown
 ```bash
 # Delete a local branch
 git branch -d branch-to-delete
@@ -66,38 +57,25 @@ git branch -d branch-to-delete
 git branch -D branch-to-delete
 ```
 
-```git
-
 #### **5. Team Collaboration Best Practices**
 
 Here are some best practices for effective team collaboration using Git:
 
 - **Use Descriptive Branch Names:** Choose clear and meaningful branch names that describe the purpose of the branch.
-
 - **Frequent Commits:** Make small, logical commits and commit often to keep the history clean and easy to understand.
-
 - **Pull Before Push:** Always pull the latest changes from the remote repository before pushing your own changes to avoid conflicts.
-
 - **Pull Requests (PRs):** When working with a shared remote repository (e.g., on GitHub or GitLab), create PRs for code review and discussion before merging into the main branch.
-
 - **Code Reviews:** Actively participate in code reviews to maintain code quality and ensure team members are on the same page.
-
 - **Branch Protection:** Protect important branches (e.g., `main` or `master`) to prevent accidental force pushes and ensure only approved changes are merged.
-
 - **Merge Conflicts:** Resolve merge conflicts promptly and communicate with your team to prevent code conflicts from escalating.
-
 - **Commit Messages:** Use informative commit messages with a concise summary in the first line and more detailed descriptions if necessary.
-
 - **Branch Cleanup:** Delete feature branches once they are no longer needed to keep the repository clean.
-
 - **Use Git Hooks:** Implement pre-commit and pre-push hooks to automate code linting, testing, and formatting.
-
 - **Documentation:** Maintain clear and up-to-date documentation to help team members understand the project's structure and processes.
 
 Remember to adapt these practices to your team's specific needs and workflow.
 
 Now you have a comprehensive guide to Git branching, collaboration, and best practices. Feel free to copy and paste this Markdown guide into your documentation.
-
 
 ## To check the commit that is not yet pushed to origin
 
@@ -106,8 +84,6 @@ To check the commit that is not yet pushed to the remote repository, you can use
 ```git
 git log origin/main..HEAD
 ```
-
-This command will show you the commits that are present in your local branch (main) but not in the remote branch (origin/main).
 
 ### Fixing Unrelated Histories in Git
 
@@ -171,13 +147,13 @@ It's crucial to communicate with your team or collaborators when merging unrelat
 
 Fixing unrelated histories in Git is a useful technique when you need to merge two repositories with different commit histories. However, it should be used with caution, as merging unrelated histories can lead to complications and potential conflicts. Ensure that you understand the implications and communicate with your team before proceeding.
 
-### Log oneline commits on terminal
+### Log Oneline Commits on Terminal
 
 ```git
 git log --pretty=oneline
 ```
 
-### Count the number of Commits locally
+### Count the Number of Commits Locally
 
 To check the number of commits in a Git repository locally using a terminal, you can use the git rev-list command with the --count option. Here's how you can do it:
 
@@ -187,7 +163,7 @@ git rev-list --count HEAD
 
 This command will count the number of commits reachable from the current branch's HEAD.
 
-### Update Git to latest version using Command Line (For Windows)
+### Update Git to the Latest Version using Command Line (For Windows)
 
 Check the version first.
 
@@ -195,7 +171,7 @@ Check the version first.
 git version
 ```
 
-Now Update it to latest stable version using terminal.
+Now update it to the latest stable version using the terminal.
 
 ```git
 git update-git-for-windows
