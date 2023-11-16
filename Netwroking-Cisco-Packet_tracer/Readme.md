@@ -34,11 +34,9 @@ Now press `wr` to save the configuration you made.
 
 It stands for **Show IP Interface Brief.**
 
-
 ## Configure DHCP
 
 **DHCP** stands for Dynamic Host Configuration Protocol. It is a network management protocol used to dynamically assign an IP address to any device, or node, on a network so it can communicate using IP.
-
 
 ```cisco
 en
@@ -85,12 +83,11 @@ wr
 sh valn br
 ```
 
-
 ## Configure Vlan and Trunks
 
 Configuring virtual networks and trunks in cisco packet tracer. Consider we have two switches connected to 2 systems and these switches are also connected to each other within the same ip and default gateway, they can communicated. But to prevent that we use Vlans. But if we want to networks connected to different switches to communicate we can use trunks.
 
-### For Switch 1 
+### For Switch 1
 
 ```cisco
 en
@@ -114,9 +111,7 @@ switchport mode trunk
 
 ```
 
-
 ## For Switch 2
-
 
 ```cisco
 en
@@ -226,7 +221,7 @@ In summary, inter-VLAN routing enables communication between devices in differen
 
 ## Router on the stick inter-vlan
 
-### Switch Configuration
+### Switch Configuration for inter-vlan
 
 ```cisco
 en
@@ -248,7 +243,7 @@ int f0/9
 switchport mode trunk
 ```
 
-### Router Configuration
+### Router Configuration for inter-vlan
 
 ```cisco
 config t
@@ -264,4 +259,3 @@ int f0/0.20
 encapsulation dot1q 20
 ip add 192.168.20.1 255.255.255.0
 ```
-
