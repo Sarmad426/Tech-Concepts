@@ -1,50 +1,53 @@
 # Documentation of Various Concepts
 
+- Markdown
 - Npm , Node
-- Typescript
+- Command Prompt
+- Linux
+- Data Communication and Networking
 - Next js
 - SQL
 - Prisma
 - Git
 - Drizzle
 - Sanity
-- Postgresql
 - Next Auth
 - Vercel
 - Stripe
-- Api Links
+- Clerk
 
 ## Checkout Some of my amazing projects
 
 ### Checkout My Protfolio
 
-[Visit](https://sarmad-protfolio.vercel.app/)
+<https://sarmad-protfolio.vercel.app/>
 
-### Full Stack Ecommerce Hackathon
-[Visit](https://next-ecommerce-sanity-gold.vercel.app)
+### Full Stack E-commerce Hackathon
 
-Full Stack Ecommerce Website build with Next js and Sanity.io. 
+<https://next-sanity-ecommerce-gold.vercel.app/>
 
-### Ecommerce Hackathon
+Full Stack E-commerce Website build with Next js and Sanity.io.
+
+### E-commerce Hackathon
 
 Hackthon UI for hackathon. Built with Next js, Typescript, Tailwind CSS.
 
-[Visit](https://hackathon-1-xi.vercel.app/)
+<https://hackathon-1-xi.vercel.app/>
 
-### Ecommerce App
+### E-commerce App
 
-Mini Amazon Ecommerce App built on top of React and Sass.
+Mini Amazon E-commerce App built on top of React and Sass.
 
-[Visit](https://progressivesite.netlify.app/)
+<https://progressivesite.netlify.app/>
 
 ### Car Show Case UI
 
 Car Show case ui. Built With Next js, Typescript, Tailwind CSS.
 
-[Visit](https://car-show-case-web.vercel.app/)
+<https://car-show-case-web.vercel.app/>
 
-### Counter App
+### Todo List App
 
-Simple Counter app. Built With Next js, Typescript, Tailwind CSS.
+Simple Todo List app. Built With Next js, Typescript, Tailwind CSS and neon (Serverless Postgresql).
 
-[Visit](https://nextjs-counter-app-one.vercel.app/)
+<https://next-server-actions-todo-app-jade.vercel.app/>
