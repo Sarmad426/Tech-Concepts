@@ -34,6 +34,28 @@
 
    **Answer:** Use the command: `git log`
 
+9. **Question:** What is Git branching, and why is it important in collaborative development?
+
+   **Answer:** Git branching is the practice of diverging from the main line of development to work on different features or fixes. It's important as it allows parallel development, isolation of features, and easy collaboration.
+
+10. **Question:** How does Git handle conflicts during a merge operation?
+
+   **Answer:** Git marks conflicting sections in the files and requires manual resolution. After resolving conflicts, changes are committed, and the merge is completed.
+
+## Bonus Questions
+
+1. **Question:** Explain the purpose of Git hooks.
+
+   **Answer:** Git hooks are scripts that can be triggered at certain points in Git's execution. They are used to automate tasks like code linting, testing, and formatting.
+
+2. **Question:** What is the difference between `git fetch` and `git pull`?
+
+   **Answer:** `git fetch` retrieves changes from the remote repository but does not merge them, while `git pull` fetches and merges changes in one command.
+
+3. **Question:** How can you revert a commit that has already been pushed to the remote repository?
+
+   **Answer:** Use the command: `git revert <commit-hash>` and then push the new commit.
+
 ### Multiple Choice Questions (MCQs)
 
 1. **Question:** What does `git pull` do?
@@ -106,3 +128,63 @@
     - [ ] A. `git commit --amend-message`
     - [ ] B. `git commit --edit`
     - [x] C. `git commit --amend`
+
+13. **Question:** What does the command `git rebase` do?
+
+    - [ ] A. Create a new branch.
+    - [x] B. Combine a sequence of commits into a new base commit.
+    - [ ] C. Switch to a different branch.
+
+14. **Question:** Which Git command is used to show the changes between the working directory and the staging area?
+
+    - [x] A. `git diff`
+    - [ ] B. `git status`
+    - [ ] C. `git show`
+
+15. **Question:** When resolving a merge conflict, what does the command `git mergetool` do?
+
+    - [ ] A. Display a summary of conflicts.
+    - [x] B. Open a visual tool to help resolve conflicts.
+    - [ ] C. Automatically resolve conflicts.
+
+16. **Question:** How can you unstage changes in Git?
+
+    - [ ] A. `git reset --soft`
+    - [ ] B. `git reset --hard`
+    - [x] C. `git reset`
+
+17. **Question:** What is the purpose of the `git cherry-pick` command?
+
+    - [ ] A. Move the current branch to a specific commit.
+    - [x] B. Apply changes from a specific commit to the current branch.
+    - [ ] C. Create a new branch from a specific commit.
+
+18. **Question:** How can you see the details of a specific commit?
+
+    - [ ] A. `git show HEAD`
+    - [x] B. `git log -1 commit-hash`
+    - [ ] C. `git details commit-hash`
+
+19. **Question:** What does the command `git bisect` help you with?
+
+    - [ ] A. Switch between branches.
+    - [x] B. Perform a binary search to find the commit that introduced a bug.
+    - [ ] C. Merge two branches.
+
+20. **Question:** How can you squash multiple commits into a single commit?
+
+    - [ ] A. `git merge --squash`
+    - [ ] B. `git commit --squash`
+    - [x] C. `git rebase -i`
+
+21. **Question:** What is the purpose of the `git remote prune` command?
+
+    - [ ] A. Rename a remote repository.
+    - [ ] B. Delete a remote branch.
+    - [x] C. Remove remote tracking branches that no longer exist on the remote.
+
+22. **Question:** How do you amend a specific commit in Git?
+
+    - [ ] A. `git commit --amend -c <commit-hash>`
+    - [x] B. `git rebase -i <commit-hash>`
+    - [ ] C. `git commit --fix <commit-hash>`
