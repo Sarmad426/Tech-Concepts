@@ -1,0 +1,12 @@
+# Fonts from Google Fonts
+
+1. Open Sans
+2. Roboto
+3. Lato
+4. Montserrat
+5. Source Sans Pro
+6. Poppins
+7. Nunito
+8. Quicksand
+9. Raleway
+10. Oxygen
