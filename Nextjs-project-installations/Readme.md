@@ -9,6 +9,9 @@ npx create-next-app@latest app-name --typescript --tailwind --eslint
 This will create a new Next.js project with typescript, tailwind and eslint installed.
 Change the Project name from `app-name` to your project name.
 
+Checkout the Offical Documentation for more information.
+<https://nextjs.org/docs>
+
 ## Install Shadcn-UI
 
 ```npm
@@ -24,6 +27,8 @@ npx shadcn-ui@latest add button input form separator popover command
 ```
 
 These all are various components of shadcn.
+Checkout the Official Documentation for next.js here.
+<https://ui.shadcn.com/docs/installation/next>
 
 ## React Icons
 
