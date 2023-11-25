@@ -11,13 +11,21 @@ Prisma is a next-generation **ORM** that simplifies working with databases for a
 npm install prisma --save-dev
 ```
 
+Install Prisma and save it as a dev dependency with the `--save-dev` flag.
+Alternatively.
+
+```npm
+npm i -D prisma
+```
+
+This command do the same install prisma as a dev Dependency.
+
 ### Install Prisma Client.
 
 ```npm
 npm install @prisma/client
 ```
 
-Install Prisma and save it as a dev dependency with the `--save-dev` flag.
 
 ### For MySQL Database
 
