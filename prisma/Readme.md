@@ -11,6 +11,12 @@ Prisma is a next-generation **ORM** that simplifies working with databases for a
 npm install prisma --save-dev
 ```
 
+### Install Prisma Client.
+
+```npm
+npm install @prisma/client
+```
+
 Install Prisma and save it as a dev dependency with the `--save-dev` flag.
 
 ### For MySQL Database
@@ -82,12 +88,6 @@ npx prisma studio
 ```
 
 This command runs a local server at port 5555 ([PORT Link](http://localhost:5555)). Prisma Studio allows you to check the data in the database, see rows, columns, and add or update data.
-
-```npm
-npm install @prisma/client
-```
-
-Install Prisma Client.
 
 ```npm
 npx prisma generate
