@@ -1,6 +1,11 @@
 # Prisma
 
 Prisma is a next-generation **ORM** that simplifies working with databases for application developers. It includes the following tools:
+Visit the Official Docs for more info.
+
+<https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql>
+
+This is a prisma setup guide for relational database in an existing project.
 
 - **Prisma Client:** Auto-generated and type-safe database client for use in your application.
 - **Prisma Migrate:** A declarative data modeling and migration tool.
@@ -12,11 +17,7 @@ npm install prisma --save-dev
 ```
 
 Install Prisma and save it as a dev dependency with the `--save-dev` flag.
-Alternatively.
 
-```npm
-npm i -D prisma
-```
 
 This command do the same install prisma as a dev Dependency.
 
