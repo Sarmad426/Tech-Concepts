@@ -1,10 +1,11 @@
-# <b>SQL</b>
+# SQL (MYSQL)
 
-> <p> SQL stands for <b>Structured Query Language.</b> 
-> It is a very powerful relational database query language. It is not a Case Sensitive Language.
-> In Relational database data is stored in the form of tables, where
-> each row is called a <b>record</b> and a column is called a <b>Field.</b>
->  </p>
+SQL stands for <b>Structured Query Language.</b> 
+It is a very powerful relational database query language. It is not a Case Sensitive Language.
+In Relational database data is stored in the form of tables, where
+each row is called a <b>record</b> and a column is called a <b>Field.</b>
+ 
+> This documentation is specific for MYSQL.
 
 ## Create a Table
 
