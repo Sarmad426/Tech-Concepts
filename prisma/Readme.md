@@ -114,22 +114,12 @@ To send queries to the database, create a TypeScript file to execute Prisma Clie
 import { PrismaClient } from "@prisma/client";
 
 declare global {
-  namespace NODEJS {
-    interface Global {}
-  }
+    var prisma: PrismaClient | undefined;
 }
 
-interface CUSTOMNODEJSGLOBAL extends NODEJS.Global {
-  prisma: PrismaClient;
-}
+export const prisma = globalThis.prisma || new PrismaClient();
 
-declare const global: CUSTOMNODEJSGLOBAL;
-
-const prisma = global.prisma || new PrismaClient();
-
-if (process.env.NODE_ENV === "development") global.prisma = prisma;
-
-export default prisma;
+if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;
 ```
 
 On the application page, retrieve data. For example, in a file named `page.tsx`:
