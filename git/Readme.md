@@ -176,3 +176,9 @@ Now update it to the latest stable version using the terminal.
 ```git
 git update-git-for-windows
 ```
+
+### Update the remote origin of a repository
+
+```git
+git remote set-url origin new-repo
+```
