@@ -147,7 +147,7 @@ It's crucial to communicate with your team or collaborators when merging unrelat
 
 Fixing unrelated histories in Git is a useful technique when you need to merge two repositories with different commit histories. However, it should be used with caution, as merging unrelated histories can lead to complications and potential conflicts. Ensure that you understand the implications and communicate with your team before proceeding.
 
-### Log Oneline Commits on Terminal
+### Log Commits on one-line in terminal
 
 ```git
 git log --pretty=oneline
