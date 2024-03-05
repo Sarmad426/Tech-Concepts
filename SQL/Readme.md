@@ -1,22 +1,19 @@
 # SQL (MYSQL)
 
-SQL stands for <b>Structured Query Language.</b> 
-It is a very powerful relational database query language. It is not a Case Sensitive Language.
-In Relational database data is stored in the form of tables, where
-each row is called a <b>record</b> and a column is called a <b>Field.</b>
- 
-> This documentation is specific for MYSQL.
+SQL stands for **Structured Query Language**. It is a powerful relational database query language. It is not a Case Sensitive Language. In Relational database data is stored in the form of tables, where each row is called a **record** and a column is called a **Field**.
+
+**This documentation is specific for MYSQL.**
 
 ## Create a Table
 
 ```sql
 CREATE TABLE "customers" (
-	"id"	INTEGER NOT NULL UNIQUE,
-	"name"	TEXT NOT NULL,
-	"points"	INTEGER NOT NULL,
-	"birth_date"	TEXT NOT NULL,
-	"state"	TEXT NOT NULL,
-	PRIMARY KEY("id")
+"id" INTEGER NOT NULL UNIQUE,
+"name" TEXT NOT NULL,
+"points" INTEGER NOT NULL,
+"birth_date" TEXT NOT NULL,
+"state" TEXT NOT NULL,
+PRIMARY KEY("id")
 );
 ```
 
@@ -43,10 +40,8 @@ SELECT * FROM customers
 
 ## Comments in SQL
 
-> <p> 
+>
 > We use the double hyphen (--) to create a single line comment in sql.
-
-</p>
 
 ```sql
 -- This is a comment is SQL.
@@ -178,23 +173,20 @@ state = 'KAR' OR state = 'LHR';
 Like operator is used for searching string patterns.
 
 >Get customers whose name starts with b. (Capital or Small)
-***
-``` sql
+
+```sql
 SELECT * FROM customers
 WHERE name LIKE 'b%';
 ```
 
 > Get customers whose name ends with b.
 
- ***
-
 ```SQL
 SELECT * FROM customers 
 WHERE name LIKE '%b';
 ```
-> Search a name that has bas anywhere in the name.
 
-***
+> Search a name that has bas anywhere in the name.
 
 ```sql
 SELECT * FROM customers 
@@ -204,35 +196,35 @@ WHERE name LIKE '%bas%';
 ## REGEXP Operator (Regular Expression)
 
 > Search a name that has bas anywhere in the name.
-***
-``` sql
+
+```sql
 SELECT * FROM customers 
 WHERE name REGEXP 'bas';
 ```
 
 > Search those whose name starts with zul.
-***
-``` sql
+
+```sql
 SELECT * FROM customers 
 WHERE name REGEXP '^zul';
 ```
 
 > Search those whose name ends with zul.
-***
-``` sql
+
+```sql
 SELECT * FROM customers 
 WHERE name REGEXP 'zul$';
 ```
 
 > Search customers whose name either contain mark or simon.
-***
-``` SQL
+
+``` sql
 SELECT * FROM customers
 WHERE name REGEXP 'mark|simon' 
 ```
+
 > Now form mark, simon and rose
 
-***
 ``` SQL
 SELECT * FROM customers
 WHERE name REGEXP 'mark|simon|rose' 
