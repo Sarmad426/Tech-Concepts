@@ -50,6 +50,7 @@ Here are some of the most commonly used Docker commands:
 - **Description**: Lists all running Docker containers.
 - **Syntax**: `docker ps [OPTIONS]`
 - **Example**: `docker ps` - This command lists all running containers along with their IDs, names, and status.
+- `docker ps -a` - This commands lists all the running as well as stopped containers.
 
 ### 4. `docker stop`
 
