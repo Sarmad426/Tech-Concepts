@@ -1,6 +1,6 @@
 # Linux Commands
 
-First see the basic commands [Linux](../../Linux/)
+First see the basic commands [Linux](/Terminal/Linux/Readme.md)
 
 > **Note:** Linux is case sensitive. (Uppercase, Lowercase)
 
@@ -64,7 +64,7 @@ Lets install nano. Which is a text editor. First update the package database.
 
 ## Working with folder/files
 
-> Refer to this guide [Linux](../../Linux/)
+> Refer to this guide [Linux](/Terminal/Linux/Readme.md)
 
 - `rm file*` deletes the files starting with "file"
 - `rm -r folder_name` Deletes the folder '-r' (recursively)
