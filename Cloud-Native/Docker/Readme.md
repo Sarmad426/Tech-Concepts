@@ -82,4 +82,8 @@ Here are some of the most commonly used Docker commands:
 - **Syntax**: `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
 - **Example**: `docker exec -it container1 ls /app` - This command lists the contents of the `/app` directory in the container with ID `container1`.
 
+### 9. `docker inspect container-name`
+
+- **Description**: Inspects the container
+
 These are just a few of the many commands available in Docker. For a complete list of commands and options, refer to the [Docker documentation](https://docs.docker.com/).
