@@ -9,18 +9,25 @@ Markdown is used for Documentation blog writing and much more. It has its specia
 ## **Block Quote**
 
 Block Quote is written by starting the line with a (>) sign.
+
 >> ### Syntax
+
 ``` md
 > This is a Block Quote.
 ```
-### Output.
+
+### Output
+
 > This is a Block Quote.
-### Nesting the block quotes.
->> ### Syntax
+
+### Nesting the block quotes
+
+### Syntax
 
 ```md
 >> This is nested block quote.
 ```
+
 >> This is nested block quote.
 
 - It can be intended by adding more quotes.
@@ -30,17 +37,21 @@ Block Quote is written by starting the line with a (>) sign.
 ### **Unordered List**
 
 > Create unordered Lists by starting a line with a hyphen.
->> ### Syntax
+
+### Syntax
 
 ``` md
 - This is an unordered list.
 - This is also an unordered list.
 ```
+
 ### Output
+
 - This is an unordered list.
 - This is also an unordered list.
 
-### Nested Unordered List.
+### Nested Unordered List
+
 >> ### Syntax
 
 ``` md
@@ -48,25 +59,27 @@ Block Quote is written by starting the line with a (>) sign.
     - Hyper Text Markup Language.
 - CSS
     - Cascading Style Sheet.
-
 ```
+
 ### Output
 
 - HTML
-    - Hyper Text Markup Language.
+  - Hyper Text Markup Language.
 - CSS
-    - Cascading Style Sheet.
+  - Cascading Style Sheet.
 
 > Alternatively you can use the semantic html ul, li to create an unordered list.
 >> ### Syntax
- 
+
 ``` html
 <ul>
 <li>This is an Unordered List.</li>
 <li>This is also an unordered list.</li>
 </ul>
 ```
+
 ### Output
+
 <ul>
 <li>This is an Unordered List.</li>
 <li>This is also an unordered list.</li>
@@ -81,6 +94,7 @@ Block Quote is written by starting the line with a (>) sign.
 1. This is an ordered list.
 2. This is also ordered list.
 ```
+
 ### Output
 
 1. This is an ordered list.
@@ -95,6 +109,7 @@ Block Quote is written by starting the line with a (>) sign.
 <li>This is also ordered list.</li>
 </ol>
 ```
+
 ### Output
 
 <ol>
@@ -102,7 +117,8 @@ Block Quote is written by starting the line with a (>) sign.
 <li>This is also ordered list.</li>
 </ol>
 
-### Nested Mixed List.
+### Nested Mixed List
+
 >> ### Syntax
 
 ```md
@@ -113,6 +129,7 @@ Block Quote is written by starting the line with a (>) sign.
     1. Cascading Style Sheet.
     2. It is used to style the website.
 ```
+
 ### Output
 
 - HTML
@@ -127,6 +144,7 @@ Block Quote is written by starting the line with a (>) sign.
 > Make text bold by wrapping the words inside semantic b tag of html or \*\* \*\* inside the double asterisks, or inside double \_\_ \_\_ underscores. Let's See This in action.
 
 ### **Bold Text**
+
 >> ### Syntax
 
 ```md
@@ -134,6 +152,7 @@ Block Quote is written by starting the line with a (>) sign.
 - This is also a **Bold** Word.
 - This is also a <b>Bold</b> Word.
 ```
+
 ### Output
 
 - This is a **Bold** Word.
@@ -150,6 +169,7 @@ Block Quote is written by starting the line with a (>) sign.
 - This is also an _Italic_ word.
 - This is also an <i>Italic</i> word.
 ```
+
 ### Output.
 - This is an _Italic_ word.
 - This is also an _Italic_ word.
@@ -166,6 +186,7 @@ Block Quote is written by starting the line with a (>) sign.
 - This is a **_bold and Italic_** word.
 - This is a <b> <i> bold and Italic </i></b> word.
 ```
+
 ### Output
 - This is a **_bold and Italic_** word.
 - This is a **_bold and Italic_** word.
@@ -179,6 +200,7 @@ Block Quote is written by starting the line with a (>) sign.
 ```md
 - This text is ~~StrikeThrough~~
 ```
+
 ### Output.
 - This text is ~~StrikeThrough~~
 
@@ -186,9 +208,11 @@ Block Quote is written by starting the line with a (>) sign.
 
 > Mark special words by using html semantic mark tag.
 >> ### Syntax
+
 ```md
 - This text is <mark>Marked.</mark>
 ```
+
 ### Output.
 ---
 - This text is <mark>Marked.</mark>
@@ -198,16 +222,18 @@ Block Quote is written by starting the line with a (>) sign.
 > Mark the upper power with sup tag.
 > Mark the lower power with the sub tag.
 >> ### Syntax
+
 ```md
 - H<sup>2</sup>O.
 - H<sub>2</sub>O.
 ```
+
 ### Output.
 
 - H<sup>2</sup>O.
 - H<sub>2</sub>O.
 
-## Write Emojis 
+## Write Emojis
 
 > Paste Emojis by pressing windows + ; semicolon button.
   
@@ -222,13 +248,13 @@ Block Quote is written by starting the line with a (>) sign.
 ![Image Not Found](<Image Path.png>)
 
 > This syntax starts with a ! symbol. Inside the braces we provide the text which will be displayed when image is not found or any sort of error. In this case it is jest **alt text**. Next to that in parenthesis we put the path of the image.
-
 >> ### Syntax
 
 ```md
 ![Alt text](<../Screenshots/md snap.png>)
-``` 
-### Output Image.
+```
+
+### Output Image
 
 ![Alt text](<../Screenshots/md snap.png>)
 
@@ -237,7 +263,6 @@ Block Quote is written by starting the line with a (>) sign.
 ## Inline Document Code
 
 > Mark some document line code in single ticks to get some monospace code feel in the markdown. For Example this javascript code `const value = 5;`
-
 >> ### Syntax
 
 ```md
@@ -246,7 +271,7 @@ Block Quote is written by starting the line with a (>) sign.
 
 ### For Long code
 
-> Write code in markdown by wrapping the code inside the triple ticks `` and specifying the language's file extension as show in the above image.For this example let's take this code of python which maps the integers to their respective english letters. 
+> Write code in markdown by wrapping the code inside the triple ticks `` and specifying the language's file extension as show in the above image.For this example let's take this code of python which maps the integers to their respective english letters.
 >> ### Syntax
 
 ```py
@@ -272,7 +297,6 @@ print(output)
 
 > Where `digits_mapping = {}` is a python dictionary.
 
-
 ## **Links in Markdown**
 
 > Create links in markdown by using [Link text] to insert link text followed by (URL).
@@ -281,18 +305,20 @@ print(output)
 ``` md
 - [Github Repo Link](https://github.com/sarmad426/Documentation)
 ```
-### Output Link.
+
+### Output Link
 
 - [Github Repo Link](https://github.com/sarmad426/Documentation)
 
 > If your link is your text. Than you can simple write code in <>.
-
 >> ### Syntax
 
 ```md
 - <https://github.com>
 ```
- ### Output Link.
+
+### Output Link
+
 - <https://github.com>
 
 > Or without any tags. But it is not supported by Github Flavor Markdown (GFM).
@@ -301,9 +327,10 @@ print(output)
 ```md
 - https://github.com
 ```
-### Output Link.
 
-- https://github.com
+### Output Link
+
+- <https://github.com>
 
 ## Horizontal Line
 
@@ -313,10 +340,11 @@ print(output)
 ```md
 ---
 ```
+
 ### Output Line
+
 ---
 > Let's separate some text using the horizontal line.
-
 >> ### Syntax
 
 ```md
@@ -324,12 +352,11 @@ This is Some Sample Text.
 ***
 This is also some Sample Text. 
 ```
+
 ### Output
 This is Some Sample Text.
 
-***
-
-This is also some Sample Text. 
+This is also some Sample Text.
 
 ## Table in Markdown
 
@@ -396,6 +423,7 @@ This is also some Sample Text.
     </tbody>
 </table>
 ```
+
 ### Output Table
 ---
 <table>
@@ -468,7 +496,8 @@ Alternatively we can use this weird syntax.
 |Ruby      | Dynamically Typed  |
 | Kotlin   | Statically Typed   |
 ```
-### Output Table.
+
+### Output Table
 
 ---
 | Language |        Type        |
@@ -480,7 +509,7 @@ Alternatively we can use this weird syntax.
 |Ruby      | Dynamically Typed  |
 | Kotlin   | Statically Typed   |
 
-## CheckBoxes.
+## CheckBoxes
 
 ### Unchecked Checkbox
 
@@ -491,8 +520,10 @@ Alternatively we can use this weird syntax.
 - [ ] Create CRUD App
 - [ ] Create Markdown Documentation.
 ```
+
 ### Output
 ---
+
 - [ ] Create Catalogue
 - [ ] Create CRUD App
 - [ ] Create Markdown Documentation.
@@ -500,13 +531,16 @@ Alternatively we can use this weird syntax.
 ### Checked Checkbox
 
 > ### Syntax
+
 ```md
 - [X] Create Prisma Docs
 - [x] Create SQL Docs
 - [x] Implement SQL Injection 
 ```
+
 ### Output
 ---
+
 - [X] Create Prisma Docs
 - [x] Create SQL Docs
 - [x] Implement SQL Injection
