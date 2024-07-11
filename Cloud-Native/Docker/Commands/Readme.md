@@ -18,7 +18,7 @@ This documentation explains how to containerize a Node.js application named "doc
 
     ```Dockerfile
     # Use Node.js version 14 as the base image
-    FROM node:14
+    FROM node:20
 
     # Set the working directory inside the container
     WORKDIR /usr/src/app
