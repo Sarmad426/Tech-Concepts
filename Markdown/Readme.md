@@ -251,12 +251,12 @@ Block Quote is written by starting the line with a (>) sign.
 >> ### Syntax
 
 ```md
-![Alt text](<../Screenshots/md snap.png>)
+![Markdown image](<md snap.png>)
 ```
 
 ### Output Image
 
-![Alt text](<../Screenshots/md snap.png>)
+![Alt text](<md snap.png>)
 
 ## **Code in Markdown**
 
