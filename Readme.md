@@ -1,27 +1,16 @@
 # Documentation of Various Concepts
 
-- Markdown
-- Npm , Node
-- Command Prompt
-- Linux
-- Data Communication and Networking
-- Next js
-- SQL
-- Prisma
-- Git
-- Drizzle
-- Sanity
-- Next Auth
-- Vercel
-- Stripe
-- Clerk
-- Zustand
+- AI | Machine Learning | Deep Learing |Data Science | Generative AI
+- Back end Development
+- Cloud Native (Docker...)
+- Linux (Git...)
+- Many more Tech concepts
 
 ## Checkout Some of my amazing projects
 
 ### Checkout My Protfolio
 
-<https://sarmad-protfolio.vercel.app/>
+<https://sarmad-portfolio.vercel.app/>
 
 ### Full Stack E-commerce Hackathon
 
