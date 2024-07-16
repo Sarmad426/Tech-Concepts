@@ -6,7 +6,7 @@ Cloud native is an approach to building and running applications that exploit th
 
 Key characteristics of cloud native applications include:
 
-- **Microservices Architecture**: Building applications as a collection of small, loosely coupled services.
+- **[Microservices Architecture](1-Microservices/Readme.md)**: Building applications as a collection of small, loosely coupled services.
 - **Containerization**: Packaging applications and their dependencies into containers.
 - **Dynamic Orchestration**: Managing and scheduling containers using orchestrators like Kubernetes.
 - **Continuous Integration/Continuous Deployment (CI/CD)**: Automating the process of deploying applications.
@@ -26,7 +26,7 @@ Kubernetes is an open-source platform for automating deployment, scaling, and op
   - Storage orchestration
   - Secret and configuration management
 
-### 2. **Docker**
+### 2. [**Docker**](Docker/Readme.md)
 
 Docker is a platform for developing, shipping, and running applications inside containers. Containers package an application and its dependencies, ensuring that it runs consistently across different environments.
 
