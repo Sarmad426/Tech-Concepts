@@ -62,6 +62,7 @@ test the container.
 - **Description**: Lists all running Docker containers.
 - **Syntax**: `docker ps [OPTIONS]`
 - **Example**: `docker ps` - This command lists all running containers along with their IDs, names, and status.
+- Alternatively run `docker container ls` to get the same result
 - `docker ps -a` - This commands lists all the running as well as stopped containers.
 
 ### 4. `docker stop`
@@ -97,5 +98,12 @@ test the container.
 ### 9. `docker inspect container-name`
 
 - **Description**: Inspects the container
+
+### 10. `docker logs server-name`
+
+- **Description**: Gives logs of the container running server provided
+- `-d` flag on `docker run` frees the terminal which means you can't see any logs in terminal.
+- Run `docker logs container-name -f` to follow up. It will continuously give logs.
+- It is the name which is set by the `--name` flag
 
 These are just a few of the many commands available in Docker. For a complete list of commands and options, refer to the [Docker documentation](https://docs.docker.com/).
