@@ -39,6 +39,15 @@ Here are some of the most commonly used Docker commands:
 - **Syntax**: `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 - **Example**: `docker run -it ubuntu bash` - This command runs a new Ubuntu container in interactive mode with the `bash` shell.
 
+**Running a container at some Port:**
+
+```bash
+docker run -d --name app-server-1 -p 8000:8000 docker-image
+```
+
+In this case the container named `docker-image` runs at port `8000`. Open <http://localhost:8000/> to
+test the container.
+
 ### 2. `docker build`
 
 - **Description**: Builds a Docker image from a Dockerfile.
