@@ -261,3 +261,10 @@ Gives the ip of given domain
 **Example:**
 
 `nslookup https://github.com`
+
+### Make Command Prompt & Powershell Transparent
+
+- Open terminal
+- Press `CTRL` + `SHIFT` and scroll up to make it transparent.
+- Scroll down to shift it back to original color
+- [Change Colors](#change-the-color)
