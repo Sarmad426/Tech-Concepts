@@ -48,6 +48,9 @@ docker run -d --name app-server-1 -p 8000:8000 docker-image
 In this case the container named `docker-image` runs at port `8000`. Open <http://localhost:8000/> to
 test the container.
 
+- `-d` keeps the container in running state even after closing the terminal.
+- `--name` assigns the name to the running container, `app-server-1` in this case.
+
 ### 2. `docker build`
 
 - **Description**: Builds a Docker image from a Dockerfile.
