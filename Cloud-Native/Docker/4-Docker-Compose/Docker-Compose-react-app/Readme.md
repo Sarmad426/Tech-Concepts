@@ -119,7 +119,7 @@ docker compose up
 Docker compose does three things:
 
 - **Sync:** Sync the changes from codebase to container
-- **Restart:** Rebuild the container
+- **Rebuild:** Rebuild the container
 - **Restart:** Restart the container
 
 To rebuild the images and restart the containers, you can use:
