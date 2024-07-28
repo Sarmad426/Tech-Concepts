@@ -1,12 +1,12 @@
 # Dockerize React app using Docker Compose
 
-**Create react app using vite:**
+**Create React app using Vite:**
 
 ```bash
 npm create vite react-compose
 ```
 
-go to the new directory
+Go to the new directory
 
 ```bash
 cd react-compose
@@ -32,7 +32,7 @@ It will ask multiple questions.
 - Choose starting server `npm run dev`
 - Add listening port
 
-Docker compose will create a bunch of files.
+Docker Compose will create a bunch of files.
 
 - .dockerignore
 - Readme.Docker.md
@@ -52,7 +52,7 @@ services:
       - 5173:5173
 ```
 
-**Update the code just like that:**
+**Update the code to the following:**
 
 ```yaml
 services:
@@ -66,56 +66,38 @@ services:
        - /app/node_modules
 ```
 
-The `DockerFile` contains the following instructions.
+The `Dockerfile` contains the following instructions.
 
-```DockerFile
-
+```Dockerfile
 # syntax=docker/dockerfile:1
-
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/go/dockerfile-reference/
-
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
 
 ARG NODE_VERSION=20.10.0
 
 FROM node:${NODE_VERSION}-alpine
 
-# Use production node environment by default.
 ENV NODE_ENV production
-
 
 WORKDIR /usr/src/app
 
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.npm to speed up subsequent builds.
-# Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
-# into this layer.
 RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=package-lock.json,target=package-lock.json \
     --mount=type=cache,target=/root/.npm \
     npm ci --omit=dev
 
-# Run the application as a non-root user.
 USER node
 
-# Copy the rest of the source files into the image.
 COPY . .
 
-# Expose the port that the application listens on.
 EXPOSE 5173
 
-# Run the application.
 CMD npm run dev
-
 ```
 
-Remove all of this and copy the code from [DockerFile](../../3-dockerize-react-app/react-docker/Dockerfile) and paste in it.
+Remove all of this and copy the code from [DockerFile](../../3-dockerize-react-app/react-docker/Dockerfile) and paste it in.
 
 **Add --host:**
 
-Go to `package.json` file and add this in scripts in dev.
+Go to the `package.json` file and add this in the scripts section for dev.
 
 ```json
 "scripts": {
@@ -123,7 +105,7 @@ Go to `package.json` file and add this in scripts in dev.
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
-  },
+}
 ```
 
 **Run:**
@@ -131,3 +113,37 @@ Go to `package.json` file and add this in scripts in dev.
 ```bash
 docker compose up
 ```
+
+**Sync Rebuild and Restart:**
+
+Docker compose does three things:
+
+- **Sync:** Sync the changes from codebase to container
+- **Restart:** Rebuild the container
+- **Restart:** Restart the container
+
+To rebuild the images and restart the containers, you can use:
+
+```bash
+docker compose up --build
+```
+
+To restart the containers, use:
+
+```bash
+docker compose restart
+```
+
+**Using Docker Compose Watch:**
+
+`docker compose watch` can be used to watch for changes in the project files and automatically restart the services.
+
+Then, you can run:
+
+```bash
+docker compose watch
+```
+
+This will automatically watch for changes and restart the services as needed.
+
+With these additions, your Docker Compose setup will be more efficient and responsive to changes in your development environment.
