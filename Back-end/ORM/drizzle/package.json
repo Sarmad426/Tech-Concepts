@@ -8,7 +8,7 @@
   "scripts": {
     "db:generate": "drizzle-kit generate",
     "db:drop": "drizzle-kit drop",
-    "db:migrate": "tsx src/migrate.ts",
+    "db:migrate": "tsx migrate.ts",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "build": "bun run tsc"

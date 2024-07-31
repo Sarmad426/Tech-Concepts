@@ -5,8 +5,21 @@ import * as schema from './src/schema';
 
 const queryConnection = postgres(process.env.DATABASE_URL!);
 
+console.log("Before")
+
 const db = drizzle(queryConnection, { schema });
 
-const result = await db.query.users.findMany({});
+// await db.insert(schema.UserTable).values({
+//     name: "Sarmad",
+//     age: 20,
+//     email: 'sarmad@gmail.com',
+// })
 
-console.log('Users', result)
+await db.delete(schema.UserTable)
+
+console.log("After")
+
+// const result = await db.query.UserTable.findMany({});
+
+// console.log('Users', result)
+queryConnection.end();
