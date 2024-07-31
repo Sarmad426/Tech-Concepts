@@ -2,12 +2,16 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.32.1",
+    "pg": "^8.12.0",
     "postgres": "^3.4.4"
   },
   "scripts": {
     "db:generate": "drizzle-kit generate",
-    "db:drop":"drizzle-kit drop",
-    "db:migrate":"tsx src/migrate.ts"
+    "db:drop": "drizzle-kit drop",
+    "db:migrate": "tsx src/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "build": "bun run tsc"
   },
   "devDependencies": {
     "@types/bun": "latest",
