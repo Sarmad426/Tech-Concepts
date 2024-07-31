@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.32.1",
+    "postgres": "^3.4.4"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:drop":"drizzle-kit drop",
+    "db:migrate":"tsx src/migrate.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.23.1"
+  },
+  "name": "drizzle",
+  "module": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
