@@ -7,3 +7,87 @@ It looks and feels simple, performs on day 1000 of your project, lets you do thi
 It’s the only ORM with both **relational** and **SQL-like** query APIs, providing you the best of both worlds when it comes to accessing your relational data. Drizzle is lightweight, performant, type safe, non-lactose, gluten-free, sober, flexible and serverless-ready by design. Drizzle is not just a library, it’s an experience. 🤩
 
 Official Docs : <https://orm.drizzle.team/docs/overview>
+
+## Schema
+
+**Simple User schema:**
+
+```ts
+import { pgTable, serial, varchar, } from "drizzle-orm/pg-core";
+
+export const UserTable = pgTable('users', {
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+})
+```
+
+**Extended Schema:**
+
+```ts
+import { integer, pgEnum, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+
+// Postgresql Enum
+export const UserRole = pgEnum('userRole', ['ADMIN', 'USER'])
+
+export const UserTable = pgTable('users', {
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+    age: integer('age').$type<18 | 60>().notNull(),
+    email: varchar('email', { length: 2555 }).unique().notNull(),
+    role: UserRole('userRole').default('USER').notNull(),
+})
+```
+
+**One to One relationship:**
+
+```ts
+// Referencing one to one relationship with user table
+
+export const UserPreferencesTable = pgTable('UserPreferences', {
+    id: serial('id').primaryKey(),
+    emailUpdates: boolean('emailUpdates').notNull(),
+    userId: serial('userId').references(() => UserTable.id).notNull(),
+})
+```
+
+**One to many relationship:**
+
+```ts
+// Referencing one to many relationship with user table
+
+export const PostsTable = pgTable('posts', {
+    id: serial('id').primaryKey(),
+    title: varchar('title', { length: 255 }).notNull(),
+    ratings: real('ratings').default(0).notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+    authorId: serial("userId")
+        .references(() => UserTable.id)
+        .notNull(),
+})
+```
+
+**Many to Many relationship:**
+
+```ts
+export const CategoryTable = pgTable("Category", {
+    id: serial("id").primaryKey(),
+    name: varchar("name", { length: 255 }).notNull(),
+});
+
+// Creating join table for many to many relationship between posts and category table
+
+export const PostCategoryTable = pgTable(
+    "PostCategory",
+    {
+        postId: serial("postId").references(() => PostsTable.id).notNull(),
+        categoryId: serial("categoryId").references(() => CategoryTable.id).notNull(),
+    },
+    // Creating a composite primary key
+    (table) => {
+        return {
+            pk: primaryKey({ columns: [table.postId, table.categoryId] }),
+        };
+    }
+);
+```
