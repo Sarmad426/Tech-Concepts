@@ -91,3 +91,49 @@ export const PostCategoryTable = pgTable(
     }
 );
 ```
+
+## Migrations
+
+I am using bun as a runtime and as a package manager. Bun supports typescript out of the box which is why there is no need for an extra build process to transpile typescript code to javascript and then run the javascript file.
+
+**Initialize the bun project:**
+
+```bash
+bun init
+```
+
+**Install dependencies:**
+
+```bash
+bun i
+```
+
+**Write the following script in `package.json`**
+
+```bash
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:drop": "drizzle-kit drop",
+    "db:migrate": "tsx migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  }
+```
+
+**Generate migrations:**
+
+```bash
+bun db:generate
+```
+
+**Perform Migrations:**
+
+```bash
+bun db:migrate
+```
+
+**Run drizzle studio:**
+
+```bash
+bun db:studio
+```
