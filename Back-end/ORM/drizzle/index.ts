@@ -1,25 +1,30 @@
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
-import * as schema from './src/schema';
-
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import * as schema from "./src/schema";
 
 const queryConnection = postgres(process.env.DATABASE_URL!);
 
-console.log("Before")
-
 const db = drizzle(queryConnection, { schema });
 
-// await db.insert(schema.UserTable).values({
-//     name: "Sarmad",
-//     age: 20,
-//     email: 'sarmad@gmail.com',
-// })
+await db
+    .insert(schema.UserTable)
+    .values(
+        {
+            name: "Nawaz",
+            age: 18,
+            email: "nawaz@email.com",
+        }
+    )
+    .returning({
+        id: schema.UserTable.id,
+    }).onConflictDoUpdate({
+        target: schema.UserTable.email,
+        set: { name: "Updated name" },
+    })
 
-await db.delete(schema.UserTable)
 
-console.log("After")
+const users = await db.query.UserTable.findMany({})
 
-// const result = await db.query.UserTable.findMany({});
 
-// console.log('Users', result)
+console.log("Users", users);
 queryConnection.end();
