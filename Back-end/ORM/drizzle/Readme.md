@@ -92,6 +92,8 @@ export const PostCategoryTable = pgTable(
 );
 ```
 
+view the final schema in [schema.ts](./src/schema.ts) file.
+
 ## Migrations
 
 I am using bun as a runtime and as a package manager. Bun supports typescript out of the box which is why there is no need for an extra build process to transpile typescript code to javascript and then run the javascript file.
@@ -136,4 +138,92 @@ bun db:migrate
 
 ```bash
 bun db:studio
+```
+
+### CRUD operations
+
+**Inserting data:**
+
+```ts
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import * as schema from "./src/schema";
+
+const queryConnection = postgres(process.env.DATABASE_URL!);
+
+const db = drizzle(queryConnection, { schema });
+
+// Inserting data
+const user = await db
+    .insert(schema.UserTable)
+    .values({
+        name: "Sarmad",
+        age: 20,
+        email: "sarmad@email.com",
+    })
+    // Returns the id of the new user
+    .returning({
+        id: schema.UserTable.id,
+    });
+
+// Closing the connection
+queryConnection.end();
+```
+
+**Inserting multiple values:**
+
+```ts
+
+const users = await db
+    .insert(schema.UserTable)
+    .values([{
+        name: "Shehbaz",
+        age: 17,
+        email: "shehbaz@email.com",
+        role: "ADMIN",
+    },
+    {
+        name: "Nawaz",
+        age: 18,
+        email: "nawaz@email.com",
+    }
+    ])
+    .returning({
+        id: schema.UserTable.id,
+    });
+```
+
+**Returning multiple values:**
+
+```ts
+const user = db.insert(schema.UserTable).values([{
+    name:"New user",
+    age: 18,
+    email: "new_user@email.com",
+}]).returning({
+    id: schema.UserTable.id,
+    userName: schema.UserTable.name
+})
+```
+
+**`onConflictDoUpdate` operation:**
+
+This operations is fired when a same target value appears to be twice.
+
+```ts
+await db
+    .insert(schema.UserTable)
+    .values(
+        {
+            name: "Nawaz",
+            age: 18,
+            email: "nawaz@email.com",
+        }
+    )
+    .returning({
+        id: schema.UserTable.id,
+    }).onConflictDoUpdate({
+        target: schema.UserTable.email,
+        set: { name: "Updated name" },
+    })
 ```
