@@ -11,16 +11,16 @@ import {
     primaryKey,
 } from "drizzle-orm/pg-core";
 
-export const userRole = pgEnum("userRole", ["ADMIN", "USER"]);
+export const UserRole = pgEnum("userRole", ["ADMIN", "USER"]);
 
 export const UserTable = pgTable(
     "user",
     {
         id: serial("id").primaryKey(),
         name: varchar("name", { length: 255 }).notNull(),
-        age: integer("age").$type<18 | 60>().notNull(),
+        age: integer("age").notNull(),
         email: varchar("email", { length: 255 }).notNull(),
-        role: userRole("userRole").default("USER").notNull(),
+        role: UserRole("userRole").default("USER").notNull(),
     },
     // Created email as query index for fast querying
     (table) => {
