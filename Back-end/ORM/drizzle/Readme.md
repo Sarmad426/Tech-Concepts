@@ -298,14 +298,113 @@ const users = await db.query.UserTable.findMany({
 
 Docs <https://orm.drizzle.team/docs/rqb>
 
-**Writing raw sql using `extras`**
+**Include custom fields by writing raw sql using `extras`**
 
 ```ts
 import { sql } from 'drizzle-orm';
 
-await db.query.users.findMany({
-  extras: {
-    loweredName: sql`lower(${users.name})`.as('lowered_name'),
-  },
+const users = await db.query.UserTable.findMany({
+    extras: {
+        lowerCaseName: sql`lower(${schema.UserTable.name})`.as('lower_case_name'),
+    },
 })
+```
+
+Add the following in `schema.ts` for performing drizzle level relations.
+
+```ts
+// Relations
+
+export const UserTableRelations = relations(UserTable, ({ one, many }) => ({
+    preferences: one(UserPreferencesTable),
+    posts: many(PostsTable),
+}),
+);
+
+export const UserPreferencesTableRelations = relations(UserPreferencesTable, ({ one }) => {
+    return {
+        user: one(UserTable, {
+            fields: [UserPreferencesTable.userId],
+            references: [UserTable.id]
+        })
+    }
+})
+
+export const PostTableRelations = relations(PostsTable, ({ one, many }) => {
+    return {
+        author: one(UserTable, {
+            fields: [PostsTable.authorId],
+            references: [UserTable.id]
+        }),
+        postCategories: many(PostCategoryTable)
+    }
+});
+
+export const PostCategoryTableRelations = relations(PostCategoryTable, ({ one }) => {
+    return {
+        post: one(PostsTable, {
+            fields: [PostCategoryTable.postId],
+            references: [PostsTable.id],
+        }),
+        category: one(CategoryTable, {
+            fields: [PostCategoryTable.categoryId],
+            references: [CategoryTable.id]
+        })
+    }
+})
+```
+
+**Getting user preferences:**
+
+```ts
+// Insert a user preference
+await db.insert(schema.UserPreferencesTable).values({
+    emailUpdates: true,
+    userId: 5,
+})
+// Extract the user & preferences if exist
+const users = await db.query.UserTable.findMany({
+    with: {
+        preferences: {
+            columns: {
+                emailUpdates: true
+            }
+        }
+    }
+})
+```
+
+**Selecting data using SQL like syntax:**
+
+```ts
+const users = await db.select().from(schema.UserTable)
+```
+
+**Getting individual column:**
+
+```ts
+const users = await db.select({
+    name: schema.UserTable.name
+}).from(schema.UserTable)
+```
+
+**Applying join:**
+
+```ts
+// Inserting a post
+await db.insert(schema.PostsTable).values({
+    title: "New post",
+    authorId: 5,
+    rating: 4,
+})
+
+const users = await db.select({
+    id: schema.UserTable.id,
+    name: schema.UserTable.name,
+    email: schema.UserTable.email,
+    age: schema.UserTable.age,
+    title: schema.PostsTable.title,
+}).from(schema.UserTable).leftJoin(schema.PostsTable,
+    eq(schema.UserTable.id, schema.PostsTable.authorId)
+)
 ```
