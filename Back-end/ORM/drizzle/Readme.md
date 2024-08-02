@@ -296,8 +296,6 @@ const users = await db.query.UserTable.findMany({
 })
 ```
 
-Docs <https://orm.drizzle.team/docs/rqb>
-
 **Include custom fields by writing raw sql using `extras`**
 
 ```ts
@@ -408,3 +406,7 @@ const users = await db.select({
     eq(schema.UserTable.id, schema.PostsTable.authorId)
 )
 ```
+
+Docs <https://orm.drizzle.team/docs/rqb>
+
+Joins Docs: <https://orm.drizzle.team/docs/joins>
