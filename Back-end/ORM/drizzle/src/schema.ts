@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import {
     integer,
     pgTable,
@@ -10,6 +11,7 @@ import {
     timestamp,
     primaryKey,
 } from "drizzle-orm/pg-core";
+
 
 export const UserRole = pgEnum("userRole", ["ADMIN", "USER"]);
 
@@ -74,3 +76,43 @@ export const PostCategoryTable = pgTable(
         };
     }
 );
+
+// Relations
+
+export const UserTableRelations = relations(UserTable, ({ one, many }) => ({
+    preferences: one(UserPreferencesTable),
+    posts: many(PostsTable),
+}),
+);
+
+export const UserPreferencesTableRelations = relations(UserPreferencesTable, ({ one }) => {
+    return {
+        user: one(UserTable, {
+            fields: [UserPreferencesTable.userId],
+            references: [UserTable.id]
+        })
+    }
+})
+
+export const PostTableRelations = relations(PostsTable, ({ one, many }) => {
+    return {
+        author: one(UserTable, {
+            fields: [PostsTable.authorId],
+            references: [UserTable.id]
+        }),
+        postCategories: many(PostCategoryTable)
+    }
+});
+
+export const PostCategoryTableRelations = relations(PostCategoryTable, ({ one }) => {
+    return {
+        post: one(PostsTable, {
+            fields: [PostCategoryTable.postId],
+            references: [PostsTable.id],
+        }),
+        category: one(CategoryTable, {
+            fields: [PostCategoryTable.categoryId],
+            references: [CategoryTable.id]
+        })
+    }
+})
