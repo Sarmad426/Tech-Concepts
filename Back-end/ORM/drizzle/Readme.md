@@ -482,3 +482,5 @@ await db
 Docs <https://orm.drizzle.team/docs/rqb>
 
 Joins Docs: <https://orm.drizzle.team/docs/joins>
+
+Conditionals: <https://orm.drizzle.team/learn/guides/conditional-filters-in-query>
