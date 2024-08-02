@@ -140,9 +140,9 @@ bun db:migrate
 bun db:studio
 ```
 
-### CRUD operations
+## CRUD operations
 
-**Inserting data:**
+### Inserting data
 
 ```ts
 import { drizzle } from "drizzle-orm/postgres-js";
@@ -226,4 +226,86 @@ await db
         target: schema.UserTable.email,
         set: { name: "Updated name" },
     })
+```
+
+### Query data
+
+**Query all the data from table:**
+
+```ts
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import * as schema from "./src/schema";
+
+const queryConnection = postgres(process.env.DATABASE_URL!);
+
+const db = drizzle(queryConnection, { schema });
+// Querying all the users
+const users = await db.query.UserTable.findMany({})
+
+console.log("Users", users);
+queryConnection.end();
+```
+
+**Find first entity:**
+
+```ts
+const user = await db.query.UserTable.findFirst({})
+```
+
+**Extract individual Column:**
+
+```ts
+const users = await db.query.UserTable.findMany({
+    columns: { name: true }
+})
+```
+
+**Get columns except `email`:**
+
+```ts
+const users = await db.query.UserTable.findMany({
+    columns: { email: false }
+})
+```
+
+**`LIMIT` & `OFFSET`**
+
+```ts
+const users = await db.query.UserTable.findMany({
+    limit: 10,
+    offset: 2,
+})
+```
+
+**Filters `WHERE`**
+
+```ts
+import { between } from "drizzle-orm";
+
+const users = await db.query.UserTable.findMany({
+    where: between(schema.UserTable.age, 18, 22)
+})
+```
+
+```ts
+import {eq} from 'drizzle-orm';
+
+const users = await db.query.UserTable.findMany({
+    where: eq(schema.UserTable.age, 18)
+})
+```
+
+Docs <https://orm.drizzle.team/docs/rqb>
+
+**Writing raw sql using `extras`**
+
+```ts
+import { sql } from 'drizzle-orm';
+
+await db.query.users.findMany({
+  extras: {
+    loweredName: sql`lower(${users.name})`.as('lowered_name'),
+  },
+})
 ```
