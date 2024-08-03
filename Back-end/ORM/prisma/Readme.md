@@ -12,39 +12,49 @@ This is a prisma setup guide for relational database in an existing project.
 
 ## Setting Up Prisma For Next.js Project
 
-```npm
+```bash
 npm install prisma --save-dev
 ```
 
 Install Prisma and save it as a dev dependency with the `--save-dev` flag.
 
-
 This command do the same install prisma as a dev Dependency.
 
-### Install Prisma Client.
+### Install Prisma Client
 
-```npm
+```bash
 npm install @prisma/client
 ```
 
-
 ### For MySQL Database
 
-```npm
+```bash
 npx prisma init --datasource-provider mysql
 ```
 
 ### For SQLite Database
 
-```npm
+```bash
 npx prisma init --datasource-provider sqlite
 ```
 
 ### For Postgres Database
 
-```npm
+```bash
 npx prisma init --datasource-provider postgresql
 ```
+
+**Example env variable string:**
+
+```txt
+postgresql://USER:PASSWORD@HOST:PORT/DATABASE
+```
+
+```txt
+postgresql://db_user:my_password@localhost:5432/new_db
+```
+
+**Postgresql** works at port `5432` and **MySQL** at `3306`.
 
 Initialize Prisma in the project and set the database to SQLite, PostgreSQL for Postgres, and MySQL for MySQL.
 
@@ -78,7 +88,7 @@ model Todo {
 
 ## Running Migration
 
-```npm
+```bash
 npx prisma migrate dev
 ```
 
@@ -86,19 +96,19 @@ Migrate model changes into the database.
 
 Or with a flag to provide the name:
 
-```npm
+```bash
 npx prisma migrate dev --name initialize the user and post model
 ```
 
 This command creates a new SQL migration file for the migration in the `prisma/migrations` directory and runs it against the database. The SQLite database file (`dev.db`) is created inside the `prisma` directory.
 
-```npm
+```bash
 npx prisma studio
 ```
 
 This command runs a local server at port 5555 ([PORT Link](http://localhost:5555)). Prisma Studio allows you to check the data in the database, see rows, columns, and add or update data.
 
-```npm
+```bash
 npx prisma generate
 ```
 
@@ -155,6 +165,8 @@ export default async function Home() {
 
 ## Reset a Database
 
-```npx
+```bash
 npx prisma migrate reset
 ```
+
+Prisma **PostgreSQL** docs: <https://www.prisma.io/docs/orm/overview/databases/postgresql>
