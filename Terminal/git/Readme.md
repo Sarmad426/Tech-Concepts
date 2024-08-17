@@ -9,106 +9,141 @@ Configure your user information for all local repositories:
 - **Set your name:**
 
 ```bash
-  git config --global user.name "[firstname lastname]"
+git config --global user.name "[firstname lastname]"
 ```
 
-- **Set your email:**  
-  ```bash
-  git config --global user.email "[valid-email]"
-  ```
-- **Enable color in Git:**  
-  ```bash
-  git config --global color.ui auto
-  ```
+- **Set your email:**
+
+```bash
+git config --global user.email "[valid-email]"
+```
+
+- **Enable color in Git:**
+
+```bash
+git config --global color.ui auto
+```
 
 ## Setup & Init
 
 Initialize and clone repositories:
 
-- **Initialize a Git repository:**  
-  ```bash
-  git init
-  ```
-- **Clone a repository:**  
-  ```bash
-  git clone [url]
-  ```
+- **Initialize a Git repository:**
+
+```bash
+git init
+```
+
+- **Clone a repository:**
+
+```bash
+git clone [url]
+```
 
 ## Stage & Snapshot
 
 Work with snapshots and the staging area:
 
-- **Check the status:**  
-  ```bash
-  git status
-  ```
-- **Stage a file:**  
-  ```bash
-  git add [file]
-  ```
-- **Unstage a file:**  
-  ```bash
-  git reset [file]
-  ```
-- **Show changes (unstaged):**  
-  ```bash
-  git diff
-  ```
-- **Show changes (staged):**  
-  ```bash
-  git diff --staged
-  ```
-- **Commit your changes:**  
-  ```bash
-  git commit -m "[descriptive message]"
-  ```
+- **Check the status:**
+
+```bash
+git status
+```
+
+- **Stage a file:**
+
+```bash
+git add [file]
+```
+
+- **Unstage a file:**
+
+```bash
+git reset [file]
+```
+
+- **Show changes (unstaged):**
+
+```bash
+git diff
+```
+
+- **Show changes (staged):**
+
+```bash
+git diff --staged
+```
+
+- **Commit your changes:**
+
+```bash
+git commit -m "[descriptive message]"
+```
 
 ## Branch & Merge
 
 Isolate work in branches and integrate changes:
 
-- **List branches:**  
-  ```bash
-  git branch
-  ```
-- **Create a new branch:**  
-  ```bash
-  git branch [branch-name]
-  ```
-- **Switch to a branch:**  
-  ```bash
-  git checkout [branch-name]
-  ```
-- **Merge a branch:**  
-  ```bash
-  git merge [branch-name]
-  ```
-- **View commit history:**  
-  ```bash
-  git log
-  ```
+- **List branches:**
+
+```bash
+git branch
+```
+
+- **Create a new branch:**
+
+```bash
+git branch [branch-name]
+```
+
+- **Switch to a branch:**
+
+```bash
+git checkout [branch-name]
+```
+
+- **Merge a branch:**
+
+```bash
+git merge [branch-name]
+```
+
+- **View commit history:**
+
+```bash
+git log
+```
 
 ## Share & Update
 
 Retrieve updates from another repository and update local repositories:
 
-- **Add a remote repository:**  
-  ```bash
-  git remote add [alias] [url]
-  ```
-- **Fetch from a remote repository:**  
-  ```bash
-  git fetch [alias]
-  ```
-- **Merge a remote branch:**  
-  ```bash
-  git merge [alias]/[branch]
-  ```
-- **Push to a remote repository:**  
-  ```bash
-  git push [alias] [branch]
-  ```
-- **Pull from a remote repository:**  
+- **Add a remote repository:**
+
+```bash
+git remote add [alias] [url]
+```
+
+- **Fetch from a remote repository:**
+
+```bash
+git fetch [alias]
+```
+
+- **Merge a remote branch:**
+
+```bash
+git merge [alias]/[branch]
+```
+
+- **Push to a remote repository:**
+
+```bash
+git push [alias] [branch]
+```
+
+- **Pull from a remote repository:**
+
   ```bash
   git pull
   ```
@@ -117,15 +152,20 @@ Retrieve updates from another repository and update local repositories:
 
 Version file removals and path changes:
 
-- **Remove a file:**  
+- **Remove a file:**
+
   ```bash
   git rm [file]
   ```
-- **Move or rename a file:**  
+
+- **Move or rename a file:**
+
   ```bash
   git mv [existing-path] [new-path]
   ```
-- **View commit logs with path changes:**  
+
+- **View commit logs with path changes:**
+
   ```bash
   git log --stat -M
   ```
@@ -134,19 +174,26 @@ Version file removals and path changes:
 
 Temporarily store modified, tracked files to change branches:
 
-- **Stash changes:**  
+- **Stash changes:**
+
   ```bash
   git stash
   ```
-- **List stashed changes:**  
+
+- **List stashed changes:**
+
   ```bash
   git stash list
   ```
-- **Apply stashed changes:**  
+
+- **Apply stashed changes:**
+
   ```bash
   git stash pop
   ```
-- **Discard stashed changes:**  
+
+- **Discard stashed changes:**
+
   ```bash
   git stash drop
   ```
@@ -155,11 +202,14 @@ Temporarily store modified, tracked files to change branches:
 
 Rewrite branches, update commits, and clear history:
 
-- **Rebase onto another branch:**  
+- **Rebase onto another branch:**
+
   ```bash
   git rebase [branch]
   ```
-- **Reset to a previous commit:**  
+
+- **Reset to a previous commit:**
+
   ```bash
   git reset --hard [commit]
   ```
@@ -168,23 +218,32 @@ Rewrite branches, update commits, and clear history:
 
 Examine logs, diffs, and object information:
 
-- **Show commit history:**  
+- **Show commit history:**
+
   ```bash
   git log
   ```
-- **Show commits on branchA but not on branchB:**  
+
+- **Show commits on branchA but not on branchB:**
+
   ```bash
   git log branchB..branchA
   ```
-- **Show commits that changed a file:**  
+
+- **Show commits that changed a file:**
+
   ```bash
   git log --follow [file]
   ```
-- **Show differences between branches:**  
+
+- **Show differences between branches:**
+
   ```bash
   git diff branchB...branchA
   ```
-- **Show any object in Git:**  
+
+- **Show any object in Git:**
+
   ```bash
   git show [SHA]
   ```
@@ -193,11 +252,14 @@ Examine logs, diffs, and object information:
 
 Prevent unintentional staging or committing of files:
 
-- **Set a global ignore file:**  
+- **Set a global ignore file:**
+
   ```bash
   git config --global core.excludesfile [file]
   ```
-- **Example .gitignore file:**  
+
+- **Example .gitignore file:**
+
   ```bash
   logs/
   *.notes
@@ -210,10 +272,9 @@ Platform-specific installers and GUIs:
 
 - **GitHub for Windows:**  
   [https://windows.github.com](https://windows.github.com)
+
 - **GitHub for Mac:**  
   [https://mac.github.com](https://mac.github.com)
+
 - **Git for All Platforms:**  
   [http://git-scm.com](http://git-scm.com)
-```
-
-This document is designed to be clear, concise, and easy to navigate. You can adjust the format or content to suit your specific needs.
