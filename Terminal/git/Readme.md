@@ -1,6 +1,6 @@
-# Git Cheat Sheet
+# Git
 
-This cheat sheet provides a quick reference to essential Git commands.
+Git is the free and open source distributed version control system that's responsible for everything GitHub related that happens locally on your computer. This cheat sheet features the most important and commonly used Git commands for easy reference.
 
 ## Setup
 
