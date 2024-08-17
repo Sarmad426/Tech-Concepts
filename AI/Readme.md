@@ -59,3 +59,8 @@ Converts spoken language into text.
 ## Speech Synthesis
 
 Converts text to speech.
+
+I have a complete Repository about **AI**. <https://github.com/Sarmad426/AI>
+
+It covers all essential topics like **Machine Learning**, **Deep Learning**, **Data Science** and **Generative AI**.
+Also it contains some practical projects of Data science.
