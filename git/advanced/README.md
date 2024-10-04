@@ -182,3 +182,37 @@ git update-git-for-windows
 ```git
 git remote set-url origin new-repo
 ```
+
+## Undo the last commit
+
+To undo the last commit in Git, you can use the following command:
+
+```bash
+git reset --soft HEAD~1
+```
+
+This command will undo the last commit but keep your changes staged. If you want to undo the commit and also unstage the changes, use:
+
+```bash
+git reset HEAD~1
+```
+
+If you want to undo the commit and discard the changes completely, use:
+
+```bash
+git reset --hard HEAD~1
+```
+
+**Undo the last commit pushed to Cloud:**
+
+Undo the last commit locally:
+
+```bash
+git reset --soft HEAD~1
+```
+
+Force push the changes to the remote repository:
+
+```bash
+git push --force
+```
