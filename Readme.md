@@ -1,8 +1,7 @@
 # Tech Concepts
 
-This repository is about learning and understanding different tech concepts. It is a collection of notes, code snippets, and resources about different tech concepts. The main goal of this repository is to help understand and learn different tech concepts.
+This repository is about learning and understanding different tech concepts. It is a collection of notes, code snippets, and resources about different tech concepts. The main goal of this repository is to help understand and learn different tech concepts. It is mostly based on theoretical concepts, but there are also some practical examples.
 
-- AI | Machine Learning | Deep Learning |Data Science | Generative AI
 - Back end Development
 - Cloud Native (Docker...)
 - Linux (Git...)
