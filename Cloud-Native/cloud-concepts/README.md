@@ -37,3 +37,15 @@ The key principles of Cloud Native are:
 
 10. **Security**  
    Incorporate security practices, such as zero-trust, encryption, and vulnerability scanning, into the development lifecycle.
+
+## What is Load Balancing?
+
+Load balancing is the process of distributing incoming network traffic across multiple servers to ensure that no single server is overwhelmed. It improves the performance, availability, and reliability of applications by distributing the workload evenly across servers.
+
+## Difference between Horizontal and Vertical Scaling
+
+- **Horizontal Scaling** (Scale Out)  
+  Horizontal scaling involves adding more machines or instances to your pool of resources to distribute the load. It increases the capacity of the system by adding more nodes.
+
+- **Vertical Scaling** (Scale Up)
+  Vertical scaling involves increasing the resources of a single machine, such as adding more CPU, memory, or storage. It increases the capacity of the system by adding more power to the existing node.
