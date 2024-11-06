@@ -1,6 +1,6 @@
 # Firebase
 
-Firebase is a cloud based platform which provides multiple services, real time database, Firestore and more.
+Firebase is a cloud based platform which provides multiple services, real time database, Firestore and more. It is maintained by google and integrated with the **Google Cloud** to provide cloud services.
 
 ## Services
 
