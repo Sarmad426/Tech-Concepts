@@ -22,7 +22,7 @@ Firebase is a cloud based platform which provides multiple services, real time d
 npm install firebase
 ```
 
-Create a project on firebase dashboard. Create a `firebase.ts` file in the root of the react project.
+Create a project on firebase dashboard. Create a `firebaseConfig.ts` file in the root of the react project.
 
 Add the following code in the file.
 
